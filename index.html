@@ -1,1829 +1,539 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURELIS GOLF — Luxury Golf Equipment & Apparel</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            100: '#fcf8e3',
-                            200: '#f5e9b8',
-                            300: '#ebd385',
-                            400: '#dfba69',
-                            500: '#c5a059',
-                            600: '#a37e3d',
-                            700: '#805f2b',
-                            800: '#5c421d',
-                            900: '#3d2a11',
-                        },
-                        emerald: {
-                            950: '#030f0b',
-                            900: '#062319',
-                            850: '#093325',
-                            800: '#0d4231',
-                            700: '#145c45',
-                        },
-                        dark: {
-                            900: '#070a09',
-                            800: '#0d1210',
-                            700: '#141c19',
-                            600: '#1e2925'
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['Cormorant Garamond', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        /* Base Luxury Styles */
-        body {
-            background-color: #070a09;
-            color: #e5e7eb;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Три суперсилы слов</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF3E3; --paper2:#F3EAD3;
+  --ink:#1F3D2B; --ink-soft:#4a5f4e;
+  --green:#2F9E58; --green-l:#DCF3E2;
+  --blue:#2F80C4; --blue-l:#DCEBF9;
+  --purple:#8A4FC7; --purple-l:#EDE2F8;
+  --yellow:#F5C84C;
+  --radius:16px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Nunito',sans-serif; overflow-x:hidden;
+  background-image:radial-gradient(rgba(31,61,43,0.07) 1.4px, transparent 1.4px);
+  background-size:22px 22px;
+}
+h1,h2,h3{font-family:'Baloo 2',cursive; margin:0 0 6px;}
+.wrap{max-width:900px; margin:0 auto; padding:0 20px;}
+section{padding:56px 0;}
+.reveal{opacity:0; transform:translateY(20px); transition:opacity .55s ease, transform .55s ease;}
+.reveal.show{opacity:1; transform:translateY(0);}
 
-        h1, h2, h3, h4, .font-serif-luxury {
-            font-family: 'Cormorant Garamond', serif;
-        }
+.page{
+  background:#fffdf7; border-radius:var(--radius); padding:32px 28px 28px;
+  border:3px solid var(--ink); position:relative;
+  box-shadow:7px 7px 0 rgba(31,61,43,0.14);
+}
+.tape{
+  position:absolute; top:-16px; left:34px; width:110px; height:30px;
+  background:var(--yellow); opacity:.85; transform:rotate(-4deg);
+  box-shadow:0 2px 4px rgba(0,0,0,0.15);
+}
+.page.blue .tape{background:var(--blue); opacity:.5;}
+.page.purple .tape{background:var(--purple); opacity:.45;}
 
-        /* Gold Gradient Text */
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #f5e9b8 0%, #c5a059 50%, #9b7b38 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.stamp{
+  width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:'Baloo 2',cursive; font-weight:800; font-size:1.6rem; color:#fff;
+  border:3px dashed rgba(255,255,255,0.6); flex-shrink:0;
+}
+.stamp.g{background:var(--green);} .stamp.b{background:var(--blue);} .stamp.p{background:var(--purple);}
+.stamp.lg{width:96px; height:96px; font-size:2.2rem;}
 
-        /* Glassmorphism */
-        .glass-panel {
-            background: rgba(13, 18, 16, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(197, 160, 89, 0.18);
-        }
+.topic-head{display:flex; align-items:center; gap:16px; margin-bottom:14px;}
+.eyebrow{color:var(--ink-soft); font-weight:700;}
+.pill{display:inline-flex; align-items:center; gap:8px; background:var(--green-l); border:2px solid var(--green); border-radius:50px; padding:6px 18px; font-weight:800; color:var(--green); font-size:.95rem;}
 
-        .glass-card {
-            background: linear-gradient(180deg, rgba(20, 28, 25, 0.6) 0%, rgba(9, 15, 13, 0.8) 100%);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(197, 160, 89, 0.12);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+.hero{min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:60px 20px;}
+.hero h1{font-size:clamp(2.3rem,7vw,4rem); line-height:1.05;}
+.hero .sub{font-size:clamp(1.05rem,3vw,1.35rem); color:var(--ink-soft); margin-top:18px; font-weight:800;}
+.hero .tag{margin-top:10px; color:var(--ink-soft); font-size:1.05rem;}
+.stamps-row{display:flex; gap:24px; margin:40px 0; flex-wrap:wrap; justify-content:center;}
+.stamps-row .stamp{width:110px; height:110px; font-size:2.3rem; animation:bob 3.2s ease-in-out infinite; box-shadow:0 8px 0 rgba(0,0,0,0.12);}
+.stamps-row .stamp:nth-child(2){animation-delay:.4s;} .stamps-row .stamp:nth-child(3){animation-delay:.8s;}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-14px) rotate(2deg);}}
 
-        .glass-card:hover {
-            border-color: rgba(197, 160, 89, 0.45);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px -10px rgba(197, 160, 89, 0.15);
-        }
+.btn{
+  display:inline-block; cursor:pointer; border:3px solid var(--ink); border-radius:50px;
+  padding:15px 32px; font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:700;
+  background:var(--green); color:#fff;
+  box-shadow:5px 5px 0 var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:active{transform:translate(3px,3px); box-shadow:2px 2px 0 var(--ink);}
+.btn.ghost{background:#fffdf7; color:var(--ink);}
 
-        /* Luxury Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #070a09;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e2925;
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #c5a059;
-        }
+.combo-demo{display:flex; gap:16px; align-items:center; justify-content:center; flex-wrap:wrap; margin:26px 0;}
+.word-box{padding:13px 22px; border-radius:12px; font-weight:800; font-size:1.25rem; border:3px solid;}
+.word-box.dep{background:var(--blue-l); border-color:var(--blue); color:var(--blue);}
+.word-box.main{background:var(--green-l); border-color:var(--green); color:var(--green);}
+.arrow{font-size:1.4rem; color:var(--ink-soft);}
+.note{background:var(--yellow); color:var(--ink); font-weight:700; border-radius:10px; padding:12px 16px; display:inline-block; margin-top:10px;}
 
-        /* Custom Gold Button Glow */
-        .btn-gold {
-            background: linear-gradient(135deg, #dfba69 0%, #c5a059 50%, #9b7b38 100%);
-            color: #070a09;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-        }
+.rule-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px;}
+@media(max-width:700px){.rule-grid{grid-template-columns:1fr;}}
+.rule-card{border-radius:14px; padding:20px; text-align:center; font-weight:700; border:3px solid;}
+.rule-card.g{background:var(--green-l); border-color:var(--green); color:var(--ink);}
+.rule-card.b{background:var(--blue-l); border-color:var(--blue); color:var(--ink);}
+.rule-card.p{background:var(--purple-l); border-color:var(--purple); color:var(--ink);}
+.rule-card .stamp{margin:0 auto 10px;}
 
-        .btn-gold::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
-            z-index: -1;
-        }
+table.decl{width:100%; border-collapse:collapse; margin:14px 0; font-size:1.02rem;}
+table.decl td{padding:8px 10px; border-bottom:2px dotted rgba(31,61,43,0.2);}
+table.decl td:first-child{color:var(--ink-soft); width:70px; font-weight:700;}
 
-        .btn-gold:hover::before {
-            left: 100%;
-        }
+.chain{display:flex; flex-direction:column; align-items:center; gap:6px; margin:16px 0;}
+.chain .step{padding:10px 20px; border-radius:12px; background:var(--paper2); font-weight:800; border:2px solid var(--ink);}
+.chain .down{color:var(--ink-soft); font-weight:700;}
 
-        .btn-gold:hover {
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
-            transform: translateY(-1px);
-        }
+.quiz-q{margin-top:20px; padding-top:20px; border-top:2px dashed rgba(31,61,43,0.25);}
+.quiz-opts{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
+.opt-btn{cursor:pointer; border-radius:12px; padding:11px 18px; font-weight:800; font-family:'Nunito',sans-serif; background:#fff; border:2px solid var(--ink); color:var(--ink);}
+.opt-btn:hover{background:var(--paper2);}
+.opt-btn.correct{background:var(--green-l); border-color:var(--green); color:var(--green);}
+.opt-btn.wrong{background:#fde3e3; border-color:#c94b4b; color:#c94b4b;}
+.feedback{margin-top:12px; padding:13px 16px; border-radius:12px; font-weight:700; line-height:1.5; display:none; border:2px solid;}
+.feedback.show{display:block;}
+.feedback.ok{background:var(--green-l); border-color:var(--green); color:#1c6b39;}
+.feedback.bad{background:#fde3e3; border-color:#c94b4b; color:#a53a3a;}
 
-        .btn-outline-gold {
-            border: 1px solid #c5a059;
-            color: #c5a059;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-        }
+.compare-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px;}
+@media(max-width:700px){.compare-grid{grid-template-columns:1fr;}}
 
-        .btn-outline-gold:hover {
-            background: rgba(197, 160, 89, 0.1);
-            color: #f5e9b8;
-            border-color: #f5e9b8;
-        }
+.game-stage{text-align:center;}
+.game-phrase{font-size:1.7rem; font-weight:800; margin:18px 0; color:var(--ink);}
+.doors{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+.door{cursor:pointer; border-radius:14px; padding:18px 16px; width:150px; font-weight:800; border:3px solid var(--ink); background:#fff; box-shadow:4px 4px 0 var(--ink);}
+.door:hover{transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--ink);}
+.door.g{color:var(--green);} .door.b{color:var(--blue);} .door.p{color:var(--purple);}
+.progress{color:var(--ink-soft); font-weight:800; margin-bottom:8px;}
 
-        /* Toast Popup Animation */
-        #toast-container {
-            position: fixed;
-            top: 24px;
-            right: 24px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            pointer-events: none;
-        }
+.footer{background:var(--ink); color:var(--paper); text-align:center; padding:60px 20px 46px;}
+.footer .name{font-size:1.6rem; font-weight:800; font-family:'Baloo 2',cursive; margin-top:6px;}
+.footer p{color:#cfe3d6; max-width:540px; margin:8px auto;}
 
-        .toast-msg {
-            pointer-events: auto;
-            animation: slideInRight 0.4s ease forwards;
-        }
-
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        /* SPA Sections Toggle */
-        .app-section {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .app-section.active {
-            display: block;
-            opacity: 1;
-        }
-
-        /* Interactive Credit Card 3D Flip/Style */
-        .card-visual {
-            background: linear-gradient(135deg, #121d18 0%, #062319 50%, #030f0b 100%);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-        }
-    </style>
+.confetti{position:fixed; inset:0; pointer-events:none; z-index:50;}
+.confetti span{position:absolute; top:-20px; width:8px; height:14px; opacity:.9; animation:fall 2.6s linear forwards;}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg); opacity:0;}}
+.result-box{text-align:center; margin-top:18px;}
+.result-box .score{font-size:2.2rem; font-weight:800; color:var(--green);}
+.mistake{text-align:left; background:var(--paper2); border-radius:12px; padding:12px 16px; margin-top:10px; border:2px solid rgba(31,61,43,0.15);}
+::selection{background:var(--yellow); color:var(--ink);}
+a{color:var(--green);}
+</style>
 </head>
-<body class="min-h-screen flex flex-col pb-16 md:pb-0 selection:bg-gold-500 selection:text-dark-900">
+<body>
 
-    <!-- TOAST NOTIFICATIONS CONTAINER -->
-    <div id="toast-container"></div>
+<section class="hero">
+  <span class="pill">Интерактивный урок русского языка</span>
+  <h1>ТРИ СУПЕРСИЛЫ<br>СЛОВ</h1>
+  <div class="sub">Согласование · Управление · Примыкание</div>
+  <div class="tag">Научись видеть связь между словами за несколько минут!</div>
+  <div class="stamps-row">
+    <div class="stamp g">С</div>
+    <div class="stamp b">У</div>
+    <div class="stamp p">П</div>
+  </div>
+  <button class="btn" onclick="document.getElementById('start').scrollIntoView()">Начать приключение →</button>
+</section>
 
-    <!-- NAVBAR HEADER -->
-    <header class="sticky top-0 z-40 w-full glass-panel border-b border-gold-500/20 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Mobile Menu Toggle -->
-            <button id="mobile-menu-btn" class="md:hidden text-gold-400 hover:text-white p-2 text-xl" aria-label="Open Menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+<div class="wrap">
 
-            <!-- Brand Logo -->
-            <a href="#home" onclick="navTo('home')" class="flex flex-col items-center group cursor-pointer">
-                <span class="font-serif text-2xl sm:text-3xl font-light tracking-[0.25em] text-gold-gradient group-hover:scale-105 transition-transform duration-300">
-                    AURELIS
-                </span>
-                <span class="text-[9px] tracking-[0.4em] text-gold-400/70 -mt-1 uppercase">GOLF • EST. 1924</span>
-            </a>
-
-            <!-- Desktop Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] font-medium text-gray-300 uppercase">
-                <a href="#home" onclick="navTo('home')" class="nav-link hover:text-gold-400 transition-colors py-2 border-b border-transparent hover:border-gold-400" data-route="home">Home</a>
-                <a href="#catalog" onclick="navTo('catalog')" class="nav-link hover:text-gold-400 transition-colors py-2 border-b border-transparent hover:border-gold-400" data-route="catalog">Catalog</a>
-                <a href="#catalog" onclick="filterCategoryAndNav('Clubs')" class="nav-link hover:text-gold-400 transition-colors py-2 border-b border-transparent hover:border-gold-400">Equipment</a>
-                <a href="#catalog" onclick="filterCategoryAndNav('Apparel')" class="nav-link hover:text-gold-400 transition-colors py-2 border-b border-transparent hover:border-gold-400">Apparel</a>
-                <a href="#catalog" onclick="filterCategoryAndNav('Accessories')" class="nav-link hover:text-gold-400 transition-colors py-2 border-b border-transparent hover:border-gold-400">Accessories</a>
-                <a href="#about" onclick="navTo('about')" class="nav-link hover:text-gold-400 transition-colors py-2 border-b border-transparent hover:border-gold-400" data-route="about">About</a>
-            </nav>
-
-            <!-- Header Action Icons -->
-            <div class="flex items-center space-x-5">
-                <!-- Search Trigger -->
-                <button onclick="toggleSearchModal(true)" class="text-gray-300 hover:text-gold-400 transition-colors p-2" title="Search">
-                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
-                </button>
-
-                <!-- Order History -->
-                <button onclick="navTo('orders')" class="hidden sm:inline-flex text-gray-300 hover:text-gold-400 transition-colors p-2 relative" title="My Orders">
-                    <i class="fa-solid fa-clock-rotate-left text-lg"></i>
-                </button>
-
-                <!-- Wishlist Badge -->
-                <button onclick="navTo('wishlist')" class="text-gray-300 hover:text-gold-400 transition-colors p-2 relative" title="Wishlist">
-                    <i class="fa-regular fa-heart text-lg"></i>
-                    <span id="wishlist-badge" class="absolute -top-1 -right-1 bg-gold-500 text-dark-900 text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center opacity-0 transition-opacity">0</span>
-                </button>
-
-                <!-- Cart Drawer Trigger -->
-                <button onclick="toggleCartDrawer(true)" class="text-gray-300 hover:text-gold-400 transition-colors p-2 relative flex items-center space-x-1" title="Cart">
-                    <i class="fa-solid fa-bag-shopping text-lg"></i>
-                    <span id="cart-badge" class="bg-gold-500 text-dark-900 text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- MOBILE MENU DRAWER -->
-    <div id="mobile-menu-drawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden transition-opacity duration-300">
-        <div class="fixed top-0 left-0 w-4/5 max-w-sm h-full glass-panel border-r border-gold-500/30 p-6 flex flex-col justify-between">
-            <div>
-                <div class="flex items-center justify-between pb-6 border-b border-gold-500/20">
-                    <span class="font-serif text-2xl text-gold-gradient">AURELIS</span>
-                    <button id="close-mobile-menu" class="text-gray-400 hover:text-white p-2"><i class="fa-solid fa-xmark text-xl"></i></button>
-                </div>
-                <nav class="mt-8 flex flex-col space-y-6 text-sm tracking-[0.2em] font-medium uppercase">
-                    <a href="#home" onclick="navTo('home'); closeMobileMenu();" class="text-gray-200 hover:text-gold-400">Home</a>
-                    <a href="#catalog" onclick="navTo('catalog'); closeMobileMenu();" class="text-gray-200 hover:text-gold-400">All Collection</a>
-                    <a href="#catalog" onclick="filterCategoryAndNav('Clubs'); closeMobileMenu();" class="text-gray-200 hover:text-gold-400">Equipment / Clubs</a>
-                    <a href="#catalog" onclick="filterCategoryAndNav('Apparel'); closeMobileMenu();" class="text-gray-200 hover:text-gold-400">Apparel</a>
-                    <a href="#catalog" onclick="filterCategoryAndNav('Accessories'); closeMobileMenu();" class="text-gray-200 hover:text-gold-400">Accessories</a>
-                    <a href="#about" onclick="navTo('about'); closeMobileMenu();" class="text-gray-200 hover:text-gold-400">Brand History</a>
-                    <a href="#orders" onclick="navTo('orders'); closeMobileMenu();" class="text-gray-200 hover:text-gold-400">My Orders</a>
-                </nav>
-            </div>
-            <div class="pt-6 border-t border-gold-500/20 text-xs text-gray-400">
-                <p class="font-serif italic text-gold-400/80 mb-2">Concierge Desk</p>
-                <p>+1 (800) 555-AURELIS</p>
-                <p>concierge@aurelisgolf.com</p>
-            </div>
-        </div>
+<section id="start" class="reveal">
+  <div class="page">
+    <div class="tape"></div>
+    <span class="eyebrow">Разминка</span>
+    <h2>Что такое словосочетание?</h2>
+    <p>Словосочетание — это два (или больше) слова, которые связаны и по смыслу, и грамматически. Одно из них — <b>главное</b>, второе — <b>зависимое</b>. От главного слова мы можем задать вопрос к зависимому — и вопрос всегда подскажет их связь.</p>
+    <div class="combo-demo">
+      <div class="word-box main">ДОМ</div>
+      <span class="arrow">→</span>
+      <div class="word-box dep">КРАСИВЫЙ</div>
     </div>
-
-    <!-- MAIN CONTENT CONTAINER (SPA VIEWS) -->
-    <main class="flex-grow">
-
-        <!-- ==================== 1. HOME SECTION ==================== -->
-        <section id="sec-home" class="app-section active">
-            <!-- Hero Section -->
-            <div class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-dark-900 border-b border-gold-500/10">
-                <!-- Ambient Dark Background Image / Glow -->
-                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/30 via-dark-900/90 to-dark-900 z-0"></div>
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-25 mix-blend-overlay"></div>
-                
-                <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
-                    <span class="inline-block text-gold-400 tracking-[0.4em] text-xs font-semibold uppercase mb-4 px-4 py-1 border border-gold-500/30 rounded-full glass-panel">
-                        Handcrafted Perfection • Limited Releases
-                    </span>
-                    <h1 class="text-5xl sm:text-7xl md:text-8xl font-light text-white tracking-tight leading-none mb-6">
-                        THE APEX OF <br><span class="italic text-gold-gradient font-normal">GOLFING MASTERY</span>
-                    </h1>
-                    <p class="max-w-2xl mx-auto text-gray-300 text-sm sm:text-base tracking-wide font-light mb-10 leading-relaxed">
-                        Forged carbon fibers, 24-karat gold inlay, and bespoke engineering. Created exclusively for those who demand ultimate precision on the green.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
-                        <button onclick="navTo('catalog')" class="btn-gold px-8 py-4 text-xs rounded-none w-full sm:w-auto">
-                            Discover The Collection
-                        </button>
-                        <button onclick="filterCategoryAndNav('Clubs')" class="btn-outline-gold px-8 py-4 text-xs rounded-none w-full sm:w-auto">
-                            Explore Master Equipment
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Brand Highlights Banner -->
-            <div class="bg-emerald-950/80 border-b border-gold-500/20 py-10">
-                <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div class="p-4">
-                        <p class="font-serif text-3xl text-gold-gradient font-light mb-1">24K Gold</p>
-                        <p class="text-xs text-gray-400 tracking-widest uppercase">Hand-Inlaid Accents</p>
-                    </div>
-                    <div class="p-4 border-l border-gold-500/10">
-                        <p class="font-serif text-3xl text-gold-gradient font-light mb-1">Forged Carbon</p>
-                        <p class="text-xs text-gray-400 tracking-widest uppercase">Aerospace Metallurgy</p>
-                    </div>
-                    <div class="p-4 border-l border-gold-500/10">
-                        <p class="font-serif text-3xl text-gold-gradient font-light mb-1">Bespoke</p>
-                        <p class="text-xs text-gray-400 tracking-widest uppercase">Custom Fitting Concierge</p>
-                    </div>
-                    <div class="p-4 border-l border-gold-500/10">
-                        <p class="font-serif text-3xl text-gold-gradient font-light mb-1">Worldwide</p>
-                        <p class="text-xs text-gray-400 tracking-widest uppercase">Insured White-Glove Transit</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Featured Collections Categories Grid -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                    <div>
-                        <span class="text-gold-400 text-xs tracking-[0.3em] uppercase block mb-2">Curated Categories</span>
-                        <h2 class="text-4xl text-white font-light tracking-wide">MASTER PIECES</h2>
-                    </div>
-                    <button onclick="navTo('catalog')" class="mt-4 md:mt-0 text-gold-400 hover:text-gold-300 text-xs tracking-widest uppercase flex items-center space-x-2">
-                        <span>View Full Catalog</span>
-                        <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Category 1 -->
-                    <div onclick="filterCategoryAndNav('Clubs')" class="group relative h-96 glass-card overflow-hidden cursor-pointer">
-                        <img src="https://images.unsplash.com/photo-1592919505780-303950717480?q=80&w=1000&auto=format&fit=crop" alt="Clubs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-8">
-                            <span class="text-gold-400 text-[10px] tracking-widest uppercase">Precision Clubs</span>
-                            <h3 class="text-3xl text-white font-serif font-light mt-1 mb-2">PRECISION CLUBS</h3>
-                            <p class="text-xs text-gray-300 font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Hand-forged carbon driver heads & balanced putters.</p>
-                            <span class="inline-flex items-center text-xs text-gold-400 font-medium tracking-widest uppercase">
-                                Explore Clubs <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Category 2 -->
-                    <div onclick="filterCategoryAndNav('Apparel')" class="group relative h-96 glass-card overflow-hidden cursor-pointer">
-                        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80&w=1000&auto=format&fit=crop" alt="Apparel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-8">
-                            <span class="text-gold-400 text-[10px] tracking-widest uppercase">Performance Silk & Cashmere</span>
-                            <h3 class="text-3xl text-white font-serif font-light mt-1 mb-2">ROYAL APPAREL</h3>
-                            <p class="text-xs text-gray-300 font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Weatherproof outerwear & Italian cashmere polos.</p>
-                            <span class="inline-flex items-center text-xs text-gold-400 font-medium tracking-widest uppercase">
-                                Explore Apparel <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Category 3 -->
-                    <div onclick="filterCategoryAndNav('Accessories')" class="group relative h-96 glass-card overflow-hidden cursor-pointer">
-                        <img src="https://images.unsplash.com/photo-1593111774601-dfbce7de1a5c?q=80&w=1000&auto=format&fit=crop" alt="Accessories" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-8">
-                            <span class="text-gold-400 text-[10px] tracking-widest uppercase">Luxury Leather Goods</span>
-                            <h3 class="text-3xl text-white font-serif font-light mt-1 mb-2">ACCESSORIES</h3>
-                            <p class="text-xs text-gray-300 font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Calfskin bags, laser rangefinders & gold-stamped balls.</p>
-                            <span class="inline-flex items-center text-xs text-gold-400 font-medium tracking-widest uppercase">
-                                Explore Accessories <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Featured Products Grid -->
-            <div class="bg-dark-800/50 py-20 border-t border-gold-500/10">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-2xl mx-auto mb-16">
-                        <span class="text-gold-400 text-xs tracking-[0.3em] uppercase block mb-2">Hand-Selected Releases</span>
-                        <h2 class="text-4xl text-white font-light tracking-wide">FEATURED ACQUISITIONS</h2>
-                    </div>
-
-                    <div id="home-featured-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <!-- Dynamic Featured Product Cards Rendered via JS -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Brand Story Banner Section -->
-            <div class="relative py-28 bg-emerald-950 overflow-hidden border-t border-b border-gold-500/20">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <span class="text-gold-400 text-xs tracking-[0.3em] uppercase block mb-3">The Heritage</span>
-                        <h2 class="text-4xl md:text-5xl font-serif text-white font-light mb-6 leading-tight">
-                            WHERE HERITAGE MEETS <br><span class="italic text-gold-gradient">UNCOMPROMISING PRECISION</span>
-                        </h2>
-                        <p class="text-gray-300 text-sm font-light leading-relaxed mb-6">
-                            Founded in St Andrews in 1924, AURELIS began as a private guild crafting custom clubs for royalty. Today, we fuse timeless Scottish craftsmanship with modern aerospace alloy science.
-                        </p>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-8">
-                            Every single piece undergoes over 120 hours of hand-finishing, gold inlaying, and robotic weight balancing.
-                        </p>
-                        <button onclick="navTo('about')" class="btn-outline-gold px-8 py-3 text-xs">
-                            Discover Our Craft
-                        </button>
-                    </div>
-                    <div class="relative">
-                        <div class="glass-card p-3 rounded-none">
-                            <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=1000&auto=format&fit=crop" alt="Craftsmanship" class="w-full h-80 md:h-96 object-cover">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ==================== 2. CATALOG SECTION ==================== -->
-        <section id="sec-catalog" class="app-section">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                
-                <!-- Catalog Header -->
-                <div class="border-b border-gold-500/20 pb-8 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                    <div>
-                        <span class="text-gold-400 text-xs tracking-[0.3em] uppercase block mb-2">Exclusive Collection</span>
-                        <h1 class="text-4xl sm:text-5xl font-serif text-white font-light">AURELIS ACQUISITIONS</h1>
-                    </div>
-                    <p class="text-xs text-gray-400 tracking-widest uppercase">
-                        Showing <span id="catalog-count-badge" class="text-gold-400 font-bold">0</span> Items
-                    </p>
-                </div>
-
-                <!-- Filters & Search Control Bar -->
-                <div class="glass-panel p-6 mb-10 flex flex-col lg:flex-row gap-6 items-center justify-between">
-                    
-                    <!-- Category Tabs -->
-                    <div class="flex flex-wrap items-center gap-2 w-full lg:w-auto">
-                        <button onclick="setCategoryFilter('ALL')" class="cat-filter-btn active text-xs tracking-widest uppercase px-5 py-2.5 border border-gold-500/30 text-gold-400 bg-gold-500/10 transition-all">All</button>
-                        <button onclick="setCategoryFilter('Clubs')" class="cat-filter-btn text-xs tracking-widest uppercase px-5 py-2.5 border border-gold-500/20 text-gray-300 hover:text-gold-400 hover:border-gold-500/40 transition-all">Clubs</button>
-                        <button onclick="setCategoryFilter('Apparel')" class="cat-filter-btn text-xs tracking-widest uppercase px-5 py-2.5 border border-gold-500/20 text-gray-300 hover:text-gold-400 hover:border-gold-500/40 transition-all">Apparel</button>
-                        <button onclick="setCategoryFilter('Accessories')" class="cat-filter-btn text-xs tracking-widest uppercase px-5 py-2.5 border border-gold-500/20 text-gray-300 hover:text-gold-400 hover:border-gold-500/40 transition-all">Accessories</button>
-                    </div>
-
-                    <!-- Search & Sort Controls -->
-                    <div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
-                        <!-- Live Filter Input -->
-                        <div class="relative w-full sm:w-64">
-                            <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-gray-400"></i>
-                            <input type="text" id="catalog-search-input" oninput="applyCatalogFilters()" placeholder="Filter items..." class="w-full bg-dark-900 border border-gold-500/20 text-gray-200 text-xs pl-9 pr-4 py-2.5 focus:outline-none focus:border-gold-400">
-                        </div>
-
-                        <!-- Sort Dropdown -->
-                        <div class="w-full sm:w-auto">
-                            <select id="catalog-sort-select" onchange="applyCatalogFilters()" class="w-full bg-dark-900 border border-gold-500/20 text-gray-200 text-xs px-4 py-2.5 focus:outline-none focus:border-gold-400 uppercase tracking-wider">
-                                <option value="featured">Sort By: Featured</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="newest">Newest First</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Products Grid -->
-                <div id="catalog-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    <!-- Dynamic Product Cards -->
-                </div>
-
-                <!-- Empty State -->
-                <div id="catalog-empty-state" class="hidden text-center py-20 glass-panel">
-                    <i class="fa-solid fa-golf-ball-tee text-4xl text-gold-400/50 mb-4"></i>
-                    <h3 class="text-2xl font-serif text-white mb-2">NO PRODUCTS MATCH YOUR CRITERIA</h3>
-                    <p class="text-xs text-gray-400 mb-6">Try adjusting your filters or search keywords.</p>
-                    <button onclick="resetCatalogFilters()" class="btn-outline-gold px-6 py-2.5 text-xs">Reset All Filters</button>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ==================== 3. PRODUCT DETAIL PAGE (PDP) ==================== -->
-        <section id="sec-product-detail" class="app-section">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                
-                <!-- Back Button -->
-                <button onclick="navTo('catalog')" class="inline-flex items-center text-xs tracking-widest text-gold-400 hover:text-gold-300 uppercase mb-8 transition-colors">
-                    <i class="fa-solid fa-arrow-left-long mr-2"></i> Back to Collection
-                </button>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <!-- Product Image Display -->
-                    <div class="glass-card p-6 relative group">
-                        <img id="pdp-image" src="" alt="Product Detail" class="w-full h-[450px] object-cover">
-                        <span id="pdp-badge" class="absolute top-8 left-8 bg-gold-500 text-dark-900 text-[10px] font-bold tracking-widest uppercase px-3 py-1"></span>
-                    </div>
-
-                    <!-- Product Specs & Buying Actions -->
-                    <div class="flex flex-col">
-                        <span id="pdp-category" class="text-gold-400 text-xs tracking-[0.3em] uppercase block mb-2">Category</span>
-                        <h1 id="pdp-title" class="text-4xl sm:text-5xl font-serif text-white font-light mb-4">Product Name</h1>
-                        <p id="pdp-price" class="text-3xl text-gold-gradient font-light mb-6">$0.00</p>
-                        
-                        <div class="border-t border-b border-gold-500/20 py-6 mb-6">
-                            <p id="pdp-description" class="text-gray-300 text-sm font-light leading-relaxed mb-6">
-                                Detailed luxury product description...
-                            </p>
-                            
-                            <!-- Specifications list -->
-                            <div class="space-y-2 text-xs text-gray-400">
-                                <p><strong class="text-gray-200">Material:</strong> <span id="pdp-material">Aerospace Titanium & 24K Gold</span></p>
-                                <p><strong class="text-gray-200">Warranty:</strong> Lifetime AURELIS Platinum Guarantee</p>
-                                <p><strong class="text-gray-200">Shipping:</strong> Complimentary Insured Global Express</p>
-                            </div>
-                        </div>
-
-                        <!-- Quantity Selector & Action Buttons -->
-                        <div class="flex flex-col sm:flex-row items-center gap-4 mb-8">
-                            <div class="flex items-center border border-gold-500/30 bg-dark-900 h-12">
-                                <button onclick="changePDPQty(-1)" class="px-4 text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-solid fa-minus text-xs"></i></button>
-                                <span id="pdp-qty-num" class="px-4 text-sm font-bold text-white">1</span>
-                                <button onclick="changePDPQty(1)" class="px-4 text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-solid fa-plus text-xs"></i></button>
-                            </div>
-
-                            <button id="pdp-add-cart-btn" onclick="addCurrentPDPToCart()" class="btn-gold flex-grow h-12 text-xs px-8">
-                                Add To Acquisition Bag
-                            </button>
-
-                            <button id="pdp-wishlist-btn" onclick="togglePDPWishlist()" class="border border-gold-500/30 text-gold-400 hover:text-white hover:border-gold-400 h-12 w-12 flex items-center justify-center transition-colors">
-                                <i id="pdp-wishlist-icon" class="fa-regular fa-heart text-lg"></i>
-                            </button>
-                        </div>
-
-                        <button onclick="buyNowPDP()" class="btn-outline-gold w-full py-3.5 text-xs">
-                            Instant Acquisition (Buy Now)
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ==================== 4. CART DRAWER & PAGE ==================== -->
-        <section id="sec-cart" class="app-section">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <h1 class="text-4xl font-serif text-white font-light mb-8 pb-4 border-b border-gold-500/20">
-                    YOUR ACQUISITION BAG
-                </h1>
-
-                <div id="cart-page-content" class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <!-- Cart Items Column -->
-                    <div class="lg:col-span-2 space-y-6" id="cart-items-container">
-                        <!-- Dynamic Cart Items rendered via JS -->
-                    </div>
-
-                    <!-- Summary & Checkout Panel -->
-                    <div class="glass-panel p-6 h-fit space-y-6">
-                        <h3 class="font-serif text-2xl text-white border-b border-gold-500/20 pb-4">SUMMARY</h3>
-                        
-                        <!-- Promo Code Form -->
-                        <div>
-                            <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-2">Privilege Code</label>
-                            <div class="flex gap-2">
-                                <input type="text" id="promo-code-input" placeholder="e.g. AURELIS10" class="flex-grow bg-dark-900 border border-gold-500/20 text-xs px-3 py-2 text-white uppercase focus:outline-none focus:border-gold-400">
-                                <button onclick="applyPromoCode()" class="btn-outline-gold px-4 py-2 text-[10px]">Apply</button>
-                            </div>
-                        </div>
-
-                        <div class="space-y-3 text-xs border-t border-gold-500/20 pt-4">
-                            <div class="flex justify-between text-gray-300">
-                                <span>Subtotal</span>
-                                <span id="cart-subtotal-val">$0.00</span>
-                            </div>
-                            <div class="flex justify-between text-gray-300">
-                                <span>Privilege Discount</span>
-                                <span id="cart-discount-val" class="text-gold-400">-$0.00</span>
-                            </div>
-                            <div class="flex justify-between text-gray-300">
-                                <span>Insured White-Glove Shipping</span>
-                                <span class="text-emerald-400 uppercase">Complimentary</span>
-                            </div>
-                            <div class="flex justify-between text-base text-white font-bold border-t border-gold-500/20 pt-3">
-                                <span>Grand Total</span>
-                                <span id="cart-total-val" class="text-gold-gradient">$0.00</span>
-                            </div>
-                        </div>
-
-                        <button onclick="proceedToCheckout()" class="btn-gold w-full py-4 text-xs">
-                            Proceed To Checkout
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ==================== 5. WISHLIST SECTION ==================== -->
-        <section id="sec-wishlist" class="app-section">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div class="border-b border-gold-500/20 pb-8 mb-8">
-                    <span class="text-gold-400 text-xs tracking-[0.3em] uppercase block mb-2">Saved Creations</span>
-                    <h1 class="text-4xl font-serif text-white font-light">YOUR WISHLIST</h1>
-                </div>
-
-                <div id="wishlist-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Dynamic Wishlist Items -->
-                </div>
-
-                <div id="wishlist-empty-state" class="hidden text-center py-20 glass-panel">
-                    <i class="fa-regular fa-heart text-4xl text-gold-400/50 mb-4"></i>
-                    <h3 class="text-2xl font-serif text-white mb-2">YOUR WISHLIST IS EMPTY</h3>
-                    <p class="text-xs text-gray-400 mb-6">Explore our collection and save your favorite masterworks.</p>
-                    <button onclick="navTo('catalog')" class="btn-gold px-8 py-3 text-xs">Explore Catalog</button>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ==================== 6. CHECKOUT SECTION ==================== -->
-        <section id="sec-checkout" class="app-section">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <h1 class="text-4xl font-serif text-white font-light mb-8 pb-4 border-b border-gold-500/20">
-                    ACQUISITION CHECKOUT
-                </h1>
-
-                <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)" class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    
-                    <!-- Left: Customer Details & Payment -->
-                    <div class="lg:col-span-7 space-y-8">
-                        
-                        <!-- Shipping Information Form -->
-                        <div class="glass-panel p-6 space-y-4">
-                            <h3 class="font-serif text-2xl text-white border-b border-gold-500/20 pb-3">1. SHIPPING CONCIERGE DETAILS</h3>
-                            
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">First Name *</label>
-                                    <input type="text" id="chk-first-name" required class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 focus:outline-none focus:border-gold-400">
-                                </div>
-                                <div>
-                                    <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">Last Name *</label>
-                                    <input type="text" id="chk-last-name" required class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 focus:outline-none focus:border-gold-400">
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">Email Address *</label>
-                                    <input type="email" id="chk-email" required class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 focus:outline-none focus:border-gold-400">
-                                </div>
-                                <div>
-                                    <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">Phone Number *</label>
-                                    <input type="tel" id="chk-phone" required class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 focus:outline-none focus:border-gold-400">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">Street Address *</label>
-                                <input type="text" id="chk-address" required class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 focus:outline-none focus:border-gold-400">
-                            </div>
-
-                            <div class="grid grid-cols-3 gap-4">
-                                <div>
-                                    <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">City *</label>
-                                    <input type="text" id="chk-city" required class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 focus:outline-none focus:border-gold-400">
-                                </div>
-                                <div>
-                                    <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">Country *</label>
-                                    <input type="text" id="chk-country" required value="United States" class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 focus:outline-none focus:border-gold-400">
-                                </div>
-                                <div>
-                                    <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">Postal Code *</label>
-                                    <input type="text" id="chk-zip" required class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 focus:outline-none focus:border-gold-400">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Payment Method Selector -->
-                        <div class="glass-panel p-6 space-y-6">
-                            <h3 class="font-serif text-2xl text-white border-b border-gold-500/20 pb-3">2. PAYMENT METHOD</h3>
-                            
-                            <div class="grid grid-cols-3 gap-3">
-                                <label class="border border-gold-500/30 p-3 flex flex-col items-center justify-center cursor-pointer hover:border-gold-400 has-[:checked]:border-gold-400 has-[:checked]:bg-gold-500/10">
-                                    <input type="radio" name="payment-method" value="card" checked onchange="togglePaymentMethod('card')" class="hidden">
-                                    <i class="fa-solid fa-credit-card text-lg text-gold-400 mb-1"></i>
-                                    <span class="text-[10px] uppercase tracking-wider text-white font-medium">Card</span>
-                                </label>
-                                <label class="border border-gold-500/30 p-3 flex flex-col items-center justify-center cursor-pointer hover:border-gold-400 has-[:checked]:border-gold-400 has-[:checked]:bg-gold-500/10">
-                                    <input type="radio" name="payment-method" value="paypal" onchange="togglePaymentMethod('paypal')" class="hidden">
-                                    <i class="fa-brands fa-paypal text-lg text-gold-400 mb-1"></i>
-                                    <span class="text-[10px] uppercase tracking-wider text-white font-medium">PayPal</span>
-                                </label>
-                                <label class="border border-gold-500/30 p-3 flex flex-col items-center justify-center cursor-pointer hover:border-gold-400 has-[:checked]:border-gold-400 has-[:checked]:bg-gold-500/10">
-                                    <input type="radio" name="payment-method" value="mercadopago" onchange="togglePaymentMethod('mercadopago')" class="hidden">
-                                    <i class="fa-solid fa-wallet text-lg text-gold-400 mb-1"></i>
-                                    <span class="text-[10px] uppercase tracking-wider text-white font-medium">Mercado Pago</span>
-                                </label>
-                            </div>
-
-                            <!-- CARD PAYMENT INPUTS WITH LIVE 3D VISUAL CARD -->
-                            <div id="card-payment-box" class="space-y-6">
-                                <!-- Dynamic Visual Card -->
-                                <div class="card-visual rounded-xl p-6 text-white max-w-md mx-auto space-y-6">
-                                    <div class="flex justify-between items-center">
-                                        <span class="font-serif text-lg tracking-widest text-gold-gradient">AURELIS BLACK</span>
-                                        <i class="fa-solid fa-microchip text-gold-400 text-2xl"></i>
-                                    </div>
-                                    <div id="vis-card-number" class="font-mono text-lg tracking-widest text-gray-200">
-                                        **** **** **** ****
-                                    </div>
-                                    <div class="flex justify-between text-xs">
-                                        <div>
-                                            <p class="text-[8px] uppercase tracking-widest text-gray-400">Cardholder</p>
-                                            <p id="vis-card-name" class="font-medium tracking-wider uppercase text-gold-300">YOUR NAME</p>
-                                        </div>
-                                        <div>
-                                            <p class="text-[8px] uppercase tracking-widest text-gray-400">Expires</p>
-                                            <p id="vis-card-exp" class="font-medium tracking-wider">MM/YY</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Inputs -->
-                                <div class="space-y-4">
-                                    <div>
-                                        <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">Cardholder Name</label>
-                                        <input type="text" id="card-name-input" oninput="updateVisualCard()" placeholder="JOHN DOE" class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 uppercase focus:outline-none focus:border-gold-400">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">Card Number</label>
-                                        <input type="text" id="card-num-input" oninput="updateVisualCard()" maxlength="19" placeholder="4000 1234 5678 9010" class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 font-mono focus:outline-none focus:border-gold-400">
-                                    </div>
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">Expiry Date</label>
-                                            <input type="text" id="card-exp-input" oninput="updateVisualCard()" maxlength="5" placeholder="MM/YY" class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 font-mono focus:outline-none focus:border-gold-400">
-                                        </div>
-                                        <div>
-                                            <label class="block text-[10px] tracking-widest text-gold-400 uppercase mb-1">CVV Security</label>
-                                            <input type="password" id="card-cvv-input" maxlength="4" placeholder="***" class="w-full bg-dark-900 border border-gold-500/20 text-xs text-white p-3 font-mono focus:outline-none focus:border-gold-400">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Alternative Payment Message -->
-                            <div id="alt-payment-box" class="hidden p-6 border border-gold-500/20 text-center space-y-3">
-                                <i class="fa-solid fa-lock text-2xl text-gold-400"></i>
-                                <p class="text-xs text-gray-300">You will be redirected to complete payment securely via selected gateway.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Order Items & Submit -->
-                    <div class="lg:col-span-5 space-y-6">
-                        <div class="glass-panel p-6 space-y-4">
-                            <h3 class="font-serif text-2xl text-white border-b border-gold-500/20 pb-3">ORDER SUMMARY</h3>
-                            
-                            <div id="checkout-summary-items" class="max-h-60 overflow-y-auto space-y-3 pr-2">
-                                <!-- Dynamic Items -->
-                            </div>
-
-                            <div class="border-t border-gold-500/20 pt-4 space-y-2 text-xs">
-                                <div class="flex justify-between text-gray-300">
-                                    <span>Subtotal</span>
-                                    <span id="chk-summary-subtotal">$0.00</span>
-                                </div>
-                                <div class="flex justify-between text-gray-300">
-                                    <span>Shipping</span>
-                                    <span class="text-emerald-400 uppercase">Free</span>
-                                </div>
-                                <div class="flex justify-between text-base font-bold text-white pt-2 border-t border-gold-500/20">
-                                    <span>Total Amount</span>
-                                    <span id="chk-summary-total" class="text-gold-gradient">$0.00</span>
-                                </div>
-                            </div>
-
-                            <button type="submit" id="place-order-btn" class="btn-gold w-full py-4 text-xs mt-4">
-                                Complete Acquisition
-                            </button>
-                            <p class="text-[10px] text-gray-400 text-center uppercase tracking-widest">
-                                <i class="fa-solid fa-shield-halved mr-1"></i> 256-Bit SSL Encrypted Demo Transaction
-                            </p>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-
-        <!-- ==================== 7. ORDER CONFIRMATION SECTION ==================== -->
-        <section id="sec-confirmation" class="app-section">
-            <div class="max-w-3xl mx-auto px-4 py-20 text-center">
-                <div class="glass-panel p-10 space-y-6 border border-gold-500/40">
-                    <div class="w-20 h-20 bg-gold-500/10 border-2 border-gold-400 rounded-full flex items-center justify-center mx-auto text-gold-400 text-3xl">
-                        ✓
-                    </div>
-
-                    <span class="text-gold-400 text-xs tracking-[0.3em] uppercase block">Acquisition Confirmed</span>
-                    <h1 class="text-4xl sm:text-5xl font-serif text-white font-light">THANK YOU FOR YOUR ORDER</h1>
-                    
-                    <p class="text-xs text-gray-300">
-                        Order Identifier: <strong id="conf-order-id" class="text-gold-gradient font-mono">AUR-2026-000000</strong>
-                    </p>
-
-                    <div class="text-left bg-dark-900 border border-gold-500/20 p-6 space-y-4 text-xs">
-                        <p class="text-gold-400 uppercase tracking-widest font-semibold border-b border-gold-500/20 pb-2">Order Details</p>
-                        <p><strong>Date:</strong> <span id="conf-date">August 24, 2026</span></p>
-                        <p><strong>Shipping Address:</strong> <span id="conf-address">123 Luxury Way</span></p>
-                        <p><strong>Total Paid:</strong> <span id="conf-total" class="text-gold-400 font-bold">$0.00</span></p>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-                        <button onclick="navTo('orders')" class="btn-gold px-8 py-3 text-xs">View Order History</button>
-                        <button onclick="navTo('catalog')" class="btn-outline-gold px-8 py-3 text-xs">Continue Shopping</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ==================== 8. ORDER HISTORY SECTION ==================== -->
-        <section id="sec-orders" class="app-section">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div class="border-b border-gold-500/20 pb-8 mb-8">
-                    <span class="text-gold-400 text-xs tracking-[0.3em] uppercase block mb-2">Member Portal</span>
-                    <h1 class="text-4xl font-serif text-white font-light">MY ORDER HISTORY</h1>
-                </div>
-
-                <div id="orders-list-container" class="space-y-6">
-                    <!-- Dynamic Orders List -->
-                </div>
-
-                <div id="orders-empty-state" class="hidden text-center py-20 glass-panel">
-                    <i class="fa-solid fa-clock-rotate-left text-4xl text-gold-400/50 mb-4"></i>
-                    <h3 class="text-2xl font-serif text-white mb-2">NO PAST ORDERS FOUND</h3>
-                    <p class="text-xs text-gray-400 mb-6">You have not placed any acquisitions yet.</p>
-                    <button onclick="navTo('catalog')" class="btn-gold px-8 py-3 text-xs">Explore Collection</button>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ==================== 9. ABOUT SECTION ==================== -->
-        <section id="sec-about" class="app-section">
-            <div class="max-w-5xl mx-auto px-4 py-16 space-y-16">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-gold-400 text-xs tracking-[0.3em] uppercase block mb-3">Est. 1924</span>
-                    <h1 class="text-5xl font-serif text-white font-light mb-6">THE AURELIS LEGACY</h1>
-                    <p class="text-gray-300 text-sm font-light leading-relaxed">
-                        For over a century, Aurelis Golf has redefined the boundaries of elite sports luxury. Born in the home of golf, St Andrews, our workshop crafts equipment that transcends function into pure art.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                    <div class="glass-panel p-8 space-y-4">
-                        <h3 class="text-3xl font-serif text-gold-gradient">FORGED CARBON & GOLD</h3>
-                        <p class="text-gray-300 text-xs leading-relaxed font-light">
-                            Each driver face is forged from high-density carbon weave, offering unparalleled energy transfer and precision trajectory control. Accentuated with 24K gold inlay to resist oxidation and signify mastery.
-                        </p>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1592919505780-303950717480?q=80&w=800&auto=format&fit=crop" alt="Legacy" class="glass-card h-80 w-full object-cover">
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-
-    <!-- ==================== CART SLIDE-OVER DRAWER ==================== -->
-    <div id="cart-drawer-backdrop" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden transition-opacity duration-300">
-        <div id="cart-drawer" class="fixed top-0 right-0 w-full max-w-md h-full glass-panel border-l border-gold-500/30 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300">
-            <div>
-                <div class="flex items-center justify-between pb-4 border-b border-gold-500/20">
-                    <span class="font-serif text-2xl text-white">YOUR ACQUISITION BAG</span>
-                    <button onclick="toggleCartDrawer(false)" class="text-gray-400 hover:text-white p-2">
-                        <i class="fa-solid fa-xmark text-xl"></i>
-                    </button>
-                </div>
-
-                <!-- Drawer Cart List -->
-                <div id="drawer-cart-items" class="my-6 max-h-[55vh] overflow-y-auto space-y-4 pr-1">
-                    <!-- Dynamic Drawer Items -->
-                </div>
-            </div>
-
-            <!-- Drawer Footer Summary -->
-            <div class="border-t border-gold-500/20 pt-4 space-y-4">
-                <div class="flex justify-between text-sm text-white font-bold">
-                    <span>Subtotal</span>
-                    <span id="drawer-subtotal-val" class="text-gold-gradient">$0.00</span>
-                </div>
-                <button onclick="toggleCartDrawer(false); navTo('cart');" class="btn-outline-gold w-full py-3 text-xs">
-                    View Full Cart
-                </button>
-                <button onclick="toggleCartDrawer(false); proceedToCheckout();" class="btn-gold w-full py-3.5 text-xs">
-                    Proceed To Checkout
-                </button>
-            </div>
-        </div>
+    <div class="chain">
+      <div class="step" style="color:var(--green)">ДОМ — главное слово</div>
+      <div class="down">↓ какой?</div>
+      <div class="step" style="color:var(--blue)">КРАСИВЫЙ — зависимое слово</div>
     </div>
+    <div class="note">Правило: от главного слова мы всегда задаём вопрос к зависимому. Вопрос — это ключ, который открывает способ связи.</div>
+    <p style="margin-top:16px;">Есть ровно три способа, которыми зависимое слово может «держаться» за главное. Дальше мы разберём каждый из них по кусочкам — с примерами, таблицами и играми.</p>
+  </div>
+</section>
 
-
-    <!-- ==================== SEARCH MODAL ==================== -->
-    <div id="search-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col p-6 sm:p-12">
-        <div class="max-w-4xl mx-auto w-full">
-            <div class="flex justify-between items-center mb-8">
-                <span class="font-serif text-2xl text-gold-gradient">SEARCH AURELIS COLLECTION</span>
-                <button onclick="toggleSearchModal(false)" class="text-gray-400 hover:text-white p-2 text-2xl">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <!-- Search Field -->
-            <div class="relative mb-8">
-                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gold-400 text-lg"></i>
-                <input type="text" id="live-search-input" oninput="handleLiveSearch()" placeholder="Search clubs, driver, polo, shoes, bag, accessories..." class="w-full bg-dark-900 border-2 border-gold-500/40 text-white text-base pl-12 pr-4 py-4 focus:outline-none focus:border-gold-400">
-            </div>
-
-            <!-- Live Results Container -->
-            <div id="search-results-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-h-[60vh] overflow-y-auto">
-                <!-- Dynamic Search Cards -->
-            </div>
-            
-            <p id="search-empty-msg" class="hidden text-center text-gray-400 py-12 text-sm font-serif">
-                NO PRODUCTS FOUND MATCHING YOUR SEARCH QUERY.
-            </p>
-        </div>
+<section class="reveal">
+  <div class="page blue">
+    <div class="tape"></div>
+    <span class="eyebrow">Запомни!</span>
+    <h2>Главное правило</h2>
+    <p>Прежде чем изучать темы подробно, посмотри на них рядом. Это твоя «карта» на весь урок.</p>
+    <div class="rule-grid">
+      <div class="rule-card g"><div class="stamp g">С</div>СОГЛАСОВАНИЕ<br><span style="font-weight:600; font-size:.95rem; color:var(--ink-soft)">слова меняются ВМЕСТЕ</span></div>
+      <div class="rule-card b"><div class="stamp b">У</div>УПРАВЛЕНИЕ<br><span style="font-weight:600; font-size:.95rem; color:var(--ink-soft)">главное слово ТРЕБУЕТ падеж</span></div>
+      <div class="rule-card p"><div class="stamp p">П</div>ПРИМЫКАНИЕ<br><span style="font-weight:600; font-size:.95rem; color:var(--ink-soft)">зависимое слово НЕ МЕНЯЕТСЯ</span></div>
     </div>
+  </div>
+</section>
 
+<section class="reveal">
+  <div class="page">
+    <div class="tape"></div>
+    <div class="topic-head"><div class="stamp lg g">С</div><div><h2 style="color:var(--green)">Согласование</h2><span class="eyebrow">способ связи №1</span></div></div>
+    <p><b>При согласовании зависимое слово изменяется вместе с главным по роду, числу и падежу.</b></p>
+    <p>Представь, что два слова — близнецы: у них одна и та же «одежда» — одинаковый род, число и падеж. Стоит поменять форму главного слова, и зависимое сразу подстраивается следом, как отражение в зеркале.</p>
+    <p>Задать вопрос к зависимому слову здесь можно так: <b>какой? какая? какое? какие? чей?</b></p>
+    <h3>Пример 1: КРАСИВЫЙ ДОМ</h3>
+    <table class="decl">
+      <tr><td>И.п.</td><td>красив<b>ый</b> дом</td></tr>
+      <tr><td>Р.п.</td><td>красив<b>ого</b> дом<b>а</b></td></tr>
+      <tr><td>Д.п.</td><td>красив<b>ому</b> дом<b>у</b></td></tr>
+      <tr><td>В.п.</td><td>красив<b>ый</b> дом</td></tr>
+      <tr><td>Т.п.</td><td>красив<b>ым</b> дом<b>ом</b></td></tr>
+      <tr><td>П.п.</td><td>красив<b>ом</b> дом<b>е</b></td></tr>
+    </table>
+    <div class="note">Видишь окончания? Они меняются парами — и у главного, и у зависимого слова одновременно.</div>
+    <h3>Пример 2: ИНТЕРЕСНАЯ КНИГА</h3>
+    <p>интересн<b>ая</b> книга → интересн<b>ой</b> книг<b>и</b> → интересн<b>ую</b> книг<b>у</b> → интересн<b>ой</b> книг<b>ой</b> → об интересн<b>ой</b> книг<b>е</b>.</p>
+    <h3>Пример 3: ЗЕЛЁНЫЕ ДЕРЕВЬЯ</h3>
+    <p>зелён<b>ые</b> деревья → зелён<b>ых</b> деревьев → зелён<b>ым</b> деревьям — форма меняется вместе, потому что деревьев здесь много (множественное число), и прилагательное это «чувствует».</p>
+    <div id="quiz-g"></div>
+  </div>
+</section>
 
-    <!-- FOOTER SECTION -->
-    <footer class="bg-emerald-950/90 border-t border-gold-500/20 text-gray-300 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
-            
-            <!-- Col 1: Brand Info -->
-            <div class="space-y-4">
-                <span class="font-serif text-2xl text-gold-gradient block">AURELIS GOLF</span>
-                <p class="text-xs text-gray-400 leading-relaxed">
-                    Crafting bespoke golf equipment & high-performance luxury apparel for discerning players worldwide.
-                </p>
-                <p class="text-[10px] text-gold-400/60 uppercase tracking-widest">© 2026 AURELIS GOLF LLC. ALL RIGHTS RESERVED.</p>
-            </div>
+<section class="reveal">
+  <div class="page blue">
+    <div class="tape"></div>
+    <div class="topic-head"><div class="stamp lg b">У</div><div><h2 style="color:var(--blue)">Управление</h2><span class="eyebrow">способ связи №2</span></div></div>
+    <p><b>При управлении главное слово требует от зависимого стоять в определённом падеже.</b></p>
+    <p>Представь, что главное слово — командир отряда. Оно не меняется само по себе, а просто «отдаёт приказ»: зависимое слово обязано встать в нужный падеж — и остаётся в нём, даже если главное слово изменится.</p>
+    <div class="note">Важно: зависимое слово НЕ обязано меняться вместе с главным — оно один раз получает «приказ» (падеж) и держит его.</div>
+    <h3>Разбор по шагам: ЧИТАТЬ КНИГУ</h3>
+    <div class="chain">
+      <div class="step" style="color:var(--blue)">ЧИТАТЬ — главное слово</div>
+      <div class="down">↓ что?</div>
+      <div class="step">КНИГУ — зависимое слово</div>
+      <div class="down">↓</div>
+      <div class="step" style="color:var(--ink-soft)">винительный падеж</div>
+    </div>
+    <p>Сравни: я читаю книгу, ты читаешь книгу, они читали книгу — глагол «читать» меняется по лицам и временам, а «книгу» всегда остаётся в винительном падеже. Вот в чём разница с согласованием!</p>
+    <h3>Ещё примеры с разными падежами</h3>
+    <table class="decl">
+      <tr><td>что?</td><td>читать книгу <span style="color:var(--ink-soft)">(В.п.)</span></td></tr>
+      <tr><td>кому?</td><td>помочь другу <span style="color:var(--ink-soft)">(Д.п.)</span></td></tr>
+      <tr><td>кем?</td><td>гордиться братом <span style="color:var(--ink-soft)">(Т.п.)</span></td></tr>
+      <tr><td>о чём?</td><td>думать о будущем <span style="color:var(--ink-soft)">(П.п.)</span></td></tr>
+      <tr><td>чего?</td><td>ждать автобуса <span style="color:var(--ink-soft)">(Р.п.)</span></td></tr>
+      <tr><td>что?</td><td>любить музыку <span style="color:var(--ink-soft)">(В.п.)</span></td></tr>
+    </table>
+    <p>Заметь: главное слово может быть глаголом (читать, помочь) или существительным (любовь к чему-то) — принцип один: оно требует падеж.</p>
+    <div id="quiz-b"></div>
+  </div>
+</section>
 
-            <!-- Col 2: Quick Links -->
-            <div class="space-y-3">
-                <p class="font-serif text-lg text-white uppercase tracking-wider mb-2">Navigation</p>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="#catalog" onclick="navTo('catalog')" class="hover:text-gold-400 transition-colors">The Collection</a></li>
-                    <li><a href="#catalog" onclick="filterCategoryAndNav('Clubs')" class="hover:text-gold-400 transition-colors">Precision Equipment</a></li>
-                    <li><a href="#about" onclick="navTo('about')" class="hover:text-gold-400 transition-colors">Custom Fitting Concierge</a></li>
-                    <li><a href="#orders" onclick="navTo('orders')" class="hover:text-gold-400 transition-colors">Private Member Orders</a></li>
-                </ul>
-            </div>
+<section class="reveal">
+  <div class="page purple">
+    <div class="tape"></div>
+    <div class="topic-head"><div class="stamp lg p">П</div><div><h2 style="color:var(--purple)">Примыкание</h2><span class="eyebrow">способ связи №3</span></div></div>
+    <p><b>При примыкании зависимое слово неизменяемое — оно присоединяется к главному только по смыслу, без падежей и окончаний.</b></p>
+    <p>Представь магнит: он притягивает к себе предмет, но сам предмет от этого не превращается во что-то другое. Так и здесь — связь есть, а формы у зависимого слова просто... нет, потому что менять нечего.</p>
+    <h3>Пример: ГОВОРИТЬ ГРОМКО</h3>
+    <div class="chain">
+      <div class="step" style="color:var(--purple)">ГОВОРИТЬ — главное слово</div>
+      <div class="down">↓ как?</div>
+      <div class="step">ГРОМКО — зависимое слово</div>
+    </div>
+    <p>Проверим: я говорю громко, ты говоришь громко, они говорили громко — глагол меняется, а «громко» — нет, никогда. У наречий просто нет ни рода, ни числа, ни падежа, поэтому им нечем «согласовываться» и нечего «требовать».</p>
+    <h3>Ещё примеры</h3>
+    <p>идти <b>быстро</b> (как?) · <b>очень</b> красивый (насколько?) · желание <b>учиться</b> (какое, по смыслу?) · начал <b>работать</b> (что делать?)</p>
+    <p>В примыкании обычно участвуют: <b>наречия</b> (громко, быстро), <b>инфинитивы</b> (учиться, работать) и другие неизменяемые слова (например, деепричастия).</p>
+    <div class="note" style="background:#fde3e3; color:#a53a3a;">Ловушка: «любовь к путешествиям» — это НЕ примыкание! Любовь — к чему? — к путешествиям. Здесь главное слово требует дательного падежа, а значит, это управление.</div>
+    <div id="quiz-p"></div>
+  </div>
+</section>
 
-            <!-- Col 3: Social & Concierge -->
-            <div class="space-y-3">
-                <p class="font-serif text-lg text-white uppercase tracking-wider mb-2">Concierge</p>
-                <p class="text-xs text-gray-400">St Andrews Guild Workshop, Scotland</p>
-                <p class="text-xs text-gold-400">concierge@aurelisgolf.com</p>
-                <div class="flex space-x-4 pt-2 text-gold-400 text-lg">
-                    <a href="#" onclick="showToast('Redirecting to Aurelis Instagram...', 'info'); return false;" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" onclick="showToast('Redirecting to Aurelis YouTube...', 'info'); return false;" class="hover:text-white"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
+<section class="reveal">
+  <div class="page">
+    <div class="tape"></div>
+    <span class="eyebrow">Сравнение</span>
+    <h2>Как их не перепутать?</h2>
+    <p>Если сомневаешься — пройди эти три вопроса по очереди, как квест:</p>
+    <div class="chain">
+      <div class="step">Шаг 1 — изменяется ли зависимое слово вместе с главным?</div>
+      <div class="down">ДА → <b style="color:var(--green)">Согласование</b></div>
+      <div class="step">Шаг 2 — главное слово требует определённого падежа?</div>
+      <div class="down">ДА → <b style="color:var(--blue)">Управление</b></div>
+      <div class="step">Шаг 3 — зависимое слово вообще не изменяется?</div>
+      <div class="down">ДА → <b style="color:var(--purple)">Примыкание</b></div>
+    </div>
+    <div class="compare-grid">
+      <div class="rule-card g">КРАСИВАЯ ДЕВОЧКА<br>→ красивой девочки<br><small>МЕНЯЮТСЯ ВМЕСТЕ</small></div>
+      <div class="rule-card b">ЧИТАТЬ КНИГУ<br>→ что? книгу<br><small>ТРЕБУЕТ ПАДЕЖ</small></div>
+      <div class="rule-card p">ГОВОРИТЬ ГРОМКО<br>→ как? громко<br><small>НЕ МЕНЯЕТСЯ</small></div>
+    </div>
+  </div>
+</section>
 
-            <!-- Col 4: Newsletter -->
-            <div class="space-y-3">
-                <p class="font-serif text-lg text-white uppercase tracking-wider mb-2">Private Club Newsletter</p>
-                <p class="text-xs text-gray-400">Receive private release invitations & bespoke custom fitting allocations.</p>
-                <form onsubmit="handleNewsletter(event)" class="flex gap-2 pt-2">
-                    <input type="email" required placeholder="Enter your email" class="bg-dark-900 border border-gold-500/20 text-xs px-3 py-2 text-white flex-grow focus:outline-none focus:border-gold-400">
-                    <button type="submit" class="btn-gold px-4 py-2 text-[10px]">JOIN</button>
-                </form>
-            </div>
-        </div>
-    </footer>
+<section class="reveal">
+  <div class="page">
+    <div class="tape"></div>
+    <span class="eyebrow">Игра</span>
+    <h2>Спаси слово</h2>
+    <div class="progress" id="g1-progress">Вопрос 1 из 10</div>
+    <div class="game-stage">
+      <div class="game-phrase" id="g1-phrase"></div>
+      <div class="doors">
+        <div class="door g" onclick="answerGame1('g')">Согласование</div>
+        <div class="door b" onclick="answerGame1('u')">Управление</div>
+        <div class="door p" onclick="answerGame1('p')">Примыкание</div>
+      </div>
+      <div class="feedback" id="g1-feedback"></div>
+    </div>
+  </div>
+</section>
 
+<section class="reveal">
+  <div class="page purple">
+    <div class="tape"></div>
+    <span class="eyebrow">Игра</span>
+    <h2>Найди ошибку</h2>
+    <div class="progress" id="g2-progress">Утверждение 1 из 5</div>
+    <div class="game-stage">
+      <div class="game-phrase" id="g2-statement" style="font-size:1.25rem"></div>
+      <div class="doors">
+        <div class="door g" onclick="answerGame2(true)">Верно</div>
+        <div class="door p" onclick="answerGame2(false)">Ошибка</div>
+      </div>
+      <div class="feedback" id="g2-feedback"></div>
+    </div>
+  </div>
+</section>
 
-    <!-- MOBILE BOTTOM NAVIGATION BAR -->
-    <nav class="md:hidden fixed bottom-0 left-0 w-full glass-panel border-t border-gold-500/20 z-40 px-4 py-2 flex justify-around items-center text-gray-400">
-        <button onclick="navTo('home')" class="flex flex-col items-center hover:text-gold-400">
-            <i class="fa-solid fa-house text-base"></i>
-            <span class="text-[9px] uppercase tracking-wider mt-1">Home</span>
-        </button>
-        <button onclick="navTo('catalog')" class="flex flex-col items-center hover:text-gold-400">
-            <i class="fa-solid fa-border-all text-base"></i>
-            <span class="text-[9px] uppercase tracking-wider mt-1">Catalog</span>
-        </button>
-        <button onclick="navTo('wishlist')" class="flex flex-col items-center hover:text-gold-400 relative">
-            <i class="fa-regular fa-heart text-base"></i>
-            <span class="text-[9px] uppercase tracking-wider mt-1">Saved</span>
-        </button>
-        <button onclick="toggleCartDrawer(true)" class="flex flex-col items-center hover:text-gold-400 relative">
-            <i class="fa-solid fa-bag-shopping text-base"></i>
-            <span class="text-[9px] uppercase tracking-wider mt-1">Cart</span>
-        </button>
-        <button onclick="navTo('orders')" class="flex flex-col items-center hover:text-gold-400">
-            <i class="fa-solid fa-user-gear text-base"></i>
-            <span class="text-[9px] uppercase tracking-wider mt-1">Account</span>
-        </button>
-    </nav>
+<section class="reveal">
+  <div class="page blue" id="exam-card">
+    <div class="tape"></div>
+    <span class="eyebrow">Финал</span>
+    <h2>Финальный босс</h2>
+    <div id="exam-body"></div>
+  </div>
+</section>
 
+<section class="reveal">
+  <div class="page">
+    <div class="tape"></div>
+    <h2>Запомни за 10 секунд</h2>
+    <div class="rule-grid">
+      <div class="rule-card g"><div class="stamp g">С</div>СОГЛАСОВАНИЕ<br>«Меняются вместе.»</div>
+      <div class="rule-card b"><div class="stamp b">У</div>УПРАВЛЕНИЕ<br>«Главное слово требует падеж.»</div>
+      <div class="rule-card p"><div class="stamp p">П</div>ПРИМЫКАНИЕ<br>«Зависимое слово не меняется.»</div>
+    </div>
+    <p style="text-align:center; margin-top:16px; font-weight:700;">Запомнил эти три предложения — считай, тема уже твоя.</p>
+  </div>
+</section>
 
+</div>
 
+<div class="footer">
+  <div class="name">© Неъматова Дильдора Мансуровна</div>
+  <div style="font-weight:800; margin-top:4px;">2026</div>
+  <p>Авторский образовательный веб-сайт по русскому языку.<br>Тема: «Согласование, управление и примыкание».</p>
+  <p>Дизайн, структура, текст и интерактивные материалы являются авторской работой.</p>
+</div>
 
-    <!-- ==================== COMPLETE JS APPLICATION ENGINE ==================== -->
-    <script>
-        /* -------------------------------------------------------------------------- */
-        /* 1. PRODUCT DATABASE & STATE                                               */
-        /* -------------------------------------------------------------------------- */
-        const PRODUCTS = [
-            {
-                id: 'prod-1',
-                name: 'Aurelis Apex Forged Carbon Driver',
-                category: 'Clubs',
-                price: 1450.00,
-                badge: 'BEST SELLER',
-                image: 'https://images.unsplash.com/photo-1592919505780-303950717480?q=80&w=800&auto=format&fit=crop',
-                description: 'Aerospace-grade forged carbon driver head with 24K gold tungsten weight ports. Engineered for explosive ball velocity and low launch spin.',
-                material: 'Forged Carbon Fiber & 24K Tungsten Gold Weights',
-                featured: true
-            },
-            {
-                id: 'prod-2',
-                name: 'Aurelis Gold Edition Blade Putter',
-                category: 'Clubs',
-                price: 980.00,
-                badge: 'LIMITED EDITION',
-                image: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=800&auto=format&fit=crop',
-                description: 'Milled from a solid block of 303 stainless steel with hand-inlaid gold aligners. Perfectly balanced face milling for silky smooth roll.',
-                material: '303 Milled Stainless Steel & Gold Inlay',
-                featured: true
-            },
-            {
-                id: 'prod-3',
-                name: 'Royal Cashmere Tour Polo — Emerald',
-                category: 'Apparel',
-                price: 320.00,
-                badge: 'NEW RELEASE',
-                image: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80&w=800&auto=format&fit=crop',
-                description: 'Ultra-lightweight 100% Mongolian Cashmere blended with Japanese silk. Moisture-wicking and incredibly smooth against skin.',
-                material: ' Mongolian Cashmere & Silk Blend',
-                featured: true
-            },
-            {
-                id: 'prod-4',
-                name: 'Imperial Calfskin Leather Golf Bag',
-                category: 'Accessories',
-                price: 2800.00,
-                badge: 'BESPOKE',
-                image: 'https://images.unsplash.com/photo-1593111774601-dfbce7de1a5c?q=80&w=800&auto=format&fit=crop',
-                description: 'Full-grain Italian calfskin leather with polished gold hardware. Features velvet-lined dividers and insulated beverage pocket.',
-                material: 'Italian Calfskin Leather & Gold Hardware',
-                featured: true
-            },
-            {
-                id: 'prod-5',
-                name: 'Aurelis Pro V1 Gold-Stamped Balls (12pk)',
-                category: 'Accessories',
-                price: 140.00,
-                badge: 'POPULAR',
-                image: 'https://images.unsplash.com/photo-1530028828-25e9b6f314e5?q=80&w=800&auto=format&fit=crop',
-                description: '4-piece urethane tour balls with 24K gold crest stamping. Delivers exceptional greenside control and tour distance.',
-                material: 'Cast Urethane Elastomer',
-                featured: false
-            },
-            {
-                id: 'prod-6',
-                name: 'Monarch Hand-Forged Irons Set (4-PW)',
-                category: 'Clubs',
-                price: 3200.00,
-                badge: 'MASTERWORK',
-                image: 'https://images.unsplash.com/photo-1592919505780-303950717480?q=80&w=800&auto=format&fit=crop',
-                description: 'Quad-forged Japanese carbon steel blades providing unmatched tactile feedback and pinpoint workability.',
-                material: 'S20C Soft Carbon Steel',
-                featured: false
-            },
-            {
-                id: 'prod-7',
-                name: 'Sovereign Waterproof Tour Jacket',
-                category: 'Apparel',
-                price: 550.00,
-                badge: 'NEW',
-                image: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80&w=800&auto=format&fit=crop',
-                description: '3-layer GORE-TEX Pro membrane with gold seam sealing. Completely stormproof while allowing 360-degree swing mobility.',
-                material: 'GORE-TEX Pro 3-Layer Synthetic',
-                featured: false
-            },
-            {
-                id: 'prod-8',
-                name: 'Aurum Italian Nappa Leather Shoes',
-                category: 'Apparel',
-                price: 680.00,
-                badge: 'HANDCRAFTED',
-                image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=800&auto=format&fit=crop',
-                description: 'Waterproof Nappa leather golf shoes with removable gold-plated spikes and OrthoLite memory foam cushioning.',
-                material: 'Nappa Leather & Gold-Plated Spikes',
-                featured: false
-            }
-        ];
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-        // Global App State (stored in localStorage)
-        let state = {
-            cart: JSON.parse(localStorage.getItem('aurelis_cart')) || [],
-            wishlist: JSON.parse(localStorage.getItem('aurelis_wishlist')) || [],
-            orders: JSON.parse(localStorage.getItem('aurelis_orders')) || [],
-            activeCategory: 'ALL',
-            promoApplied: false,
-            currentPDPId: 'prod-1',
-            pdpQty: 1
-        };
-
-        /* -------------------------------------------------------------------------- */
-        /* 2. INITIALIZATION & ROUTING ENGINE                                       */
-        /* -------------------------------------------------------------------------- */
-        document.addEventListener('DOMContentLoaded', () => {
-            initApp();
-        });
-
-        function initApp() {
-            // Setup Mobile Menu Close Listener
-            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-                document.getElementById('mobile-menu-drawer').classList.remove('hidden');
-            });
-            document.getElementById('close-mobile-menu').addEventListener('click', closeMobileMenu);
-
-            // Handle URL Hash Routing
-            window.addEventListener('popstate', handleHashRoute);
-            handleHashRoute();
-
-            // Initial UI Renders
-            renderHomeFeatured();
-            renderCatalog();
-            updateCartUI();
-            updateWishlistUI();
-            renderOrders();
-
-            // Setup ESC key listener for modals
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    toggleSearchModal(false);
-                    toggleCartDrawer(false);
-                    closeMobileMenu();
-                }
-            });
+function makeQuiz(containerId, questions){
+  const c = document.getElementById(containerId);
+  questions.forEach((q)=>{
+    const div = document.createElement('div');
+    div.className='quiz-q';
+    div.innerHTML = `<b>Определи способ связи:</b> ${q.phrase}
+      <div class="quiz-opts">
+        <button class="opt-btn" data-v="g">Согласование</button>
+        <button class="opt-btn" data-v="u">Управление</button>
+        <button class="opt-btn" data-v="p">Примыкание</button>
+      </div>
+      <div class="feedback"></div>`;
+    const opts = div.querySelectorAll('.opt-btn');
+    const fb = div.querySelector('.feedback');
+    opts.forEach(btn=>{
+      btn.onclick = ()=>{
+        if(btn.disabled) return;
+        opts.forEach(b=>b.disabled=true);
+        if(btn.dataset.v===q.answer){
+          btn.classList.add('correct');
+          fb.className='feedback show ok';
+          fb.textContent = 'Правильно! '+q.explain;
+        } else {
+          btn.classList.add('wrong');
+          opts.forEach(b=>{ if(b.dataset.v===q.answer) b.classList.add('correct'); });
+          fb.className='feedback show bad';
+          fb.textContent = 'Не совсем. '+q.explain;
         }
-
-        function closeMobileMenu() {
-            document.getElementById('mobile-menu-drawer').classList.add('hidden');
-        }
-
-        /* SPA Navigation Router */
-        function navTo(sectionId, updateHistory = true) {
-            const sections = document.querySelectorAll('.app-section');
-            sections.forEach(sec => {
-                sec.classList.remove('active');
-            });
-
-            const target = document.getElementById(`sec-${sectionId}`);
-            if (target) {
-                target.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                if (updateHistory) {
-                    history.pushState({ section: sectionId }, '', `#${sectionId}`);
-                }
-
-                // Render specific section data if needed
-                if (sectionId === 'wishlist') renderWishlistSection();
-                if (sectionId === 'cart') renderCartPage();
-                if (sectionId === 'checkout') renderCheckoutPage();
-                if (sectionId === 'orders') renderOrders();
-            }
-        }
-
-        function handleHashRoute() {
-            const hash = window.location.hash.replace('#', '') || 'home';
-            if (hash.startsWith('product-')) {
-                const prodId = hash.replace('product-', 'prod-');
-                openPDP(prodId, false);
-            } else {
-                navTo(hash, false);
-            }
-        }
-
-        /* -------------------------------------------------------------------------- */
-        /* 3. HOME & CATALOG RENDERING                                              */
-        /* -------------------------------------------------------------------------- */
-        function renderHomeFeatured() {
-            const container = document.getElementById('home-featured-products');
-            const featured = PRODUCTS.filter(p => p.featured);
-            
-            container.innerHTML = featured.map(p => createProductCardHTML(p)).join('');
-        }
-
-        function filterCategoryAndNav(catName) {
-            state.activeCategory = catName;
-            navTo('catalog');
-            // update tab buttons
-            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
-                if (btn.innerText.toUpperCase() === catName.toUpperCase()) {
-                    btn.classList.add('active', 'border-gold-500/30', 'text-gold-400', 'bg-gold-500/10');
-                } else {
-                    btn.classList.remove('active', 'border-gold-500/30', 'text-gold-400', 'bg-gold-500/10');
-                }
-            });
-            applyCatalogFilters();
-        }
-
-        function setCategoryFilter(catName) {
-            state.activeCategory = catName;
-            
-            // UI Button Toggle
-            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
-                if ((catName === 'ALL' && btn.innerText.toUpperCase() === 'ALL') || 
-                    btn.innerText.toUpperCase() === catName.toUpperCase()) {
-                    btn.className = "cat-filter-btn active text-xs tracking-widest uppercase px-5 py-2.5 border border-gold-500/30 text-gold-400 bg-gold-500/10 transition-all";
-                } else {
-                    btn.className = "cat-filter-btn text-xs tracking-widest uppercase px-5 py-2.5 border border-gold-500/20 text-gray-300 hover:text-gold-400 hover:border-gold-500/40 transition-all";
-                }
-            });
-
-            applyCatalogFilters();
-        }
-
-        function applyCatalogFilters() {
-            const query = document.getElementById('catalog-search-input').value.toLowerCase().trim();
-            const sortVal = document.getElementById('catalog-sort-select').value;
-
-            let filtered = PRODUCTS.filter(p => {
-                const matchesCat = (state.activeCategory === 'ALL' || p.category.toLowerCase() === state.activeCategory.toLowerCase());
-                const matchesSearch = p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query);
-                return matchesCat && matchesSearch;
-            });
-
-            // Sorting
-            if (sortVal === 'price-low') filtered.sort((a, b) => a.price - b.price);
-            if (sortVal === 'price-high') filtered.sort((a, b) => b.price - a.price);
-
-            const grid = document.getElementById('catalog-products-grid');
-            const empty = document.getElementById('catalog-empty-state');
-            document.getElementById('catalog-count-badge').innerText = filtered.length;
-
-            if (filtered.length === 0) {
-                grid.innerHTML = '';
-                empty.classList.remove('hidden');
-            } else {
-                empty.classList.add('hidden');
-                grid.innerHTML = filtered.map(p => createProductCardHTML(p)).join('');
-            }
-        }
-
-        function resetCatalogFilters() {
-            document.getElementById('catalog-search-input').value = '';
-            document.getElementById('catalog-sort-select').value = 'featured';
-            setCategoryFilter('ALL');
-        }
-
-        /* Product Card HTML Component */
-        function createProductCardHTML(product) {
-            const isWishlisted = state.wishlist.includes(product.id);
-            return `
-                <div class="glass-card flex flex-col justify-between group overflow-hidden p-5">
-                    <div>
-                        <!-- Image Container -->
-                        <div class="relative h-64 overflow-hidden mb-4 cursor-pointer" onclick="openPDP('${product.id}')">
-                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-3 left-3 bg-gold-500 text-dark-900 text-[9px] font-bold tracking-widest uppercase px-2.5 py-1">
-                                ${product.badge}
-                            </span>
-                            <button onclick="event.stopPropagation(); toggleWishlist('${product.id}')" class="absolute top-3 right-3 bg-dark-900/80 text-gold-400 hover:text-white h-8 w-8 rounded-full flex items-center justify-center transition-colors">
-                                <i class="${isWishlisted ? 'fa-solid text-gold-400' : 'fa-regular'} fa-heart text-sm"></i>
-                            </button>
-                        </div>
-
-                        <!-- Product Title & Category -->
-                        <span class="text-[10px] text-gold-400 tracking-widest uppercase block mb-1">${product.category}</span>
-                        <h4 onclick="openPDP('${product.id}')" class="text-xl font-serif text-white hover:text-gold-300 cursor-pointer mb-2 line-clamp-1 transition-colors">
-                            ${product.name}
-                        </h4>
-                        <p class="text-xs text-gray-400 font-light line-clamp-2 mb-4 leading-relaxed">
-                            ${product.description}
-                        </p>
-                    </div>
-
-                    <!-- Price & Cart Button -->
-                    <div class="pt-4 border-t border-gold-500/10 flex items-center justify-between">
-                        <span class="text-lg font-serif text-gold-gradient font-semibold">$${product.price.toLocaleString('en-US', {minimumFractionDigits: 2})}</span>
-                        <button onclick="addToCart('${product.id}', 1)" class="btn-gold px-4 py-2 text-[10px]">
-                            + Acquire
-                        </button>
-                    </div>
-                </div>
-            `;
-        }
-
-        /* -------------------------------------------------------------------------- */
-        /* 4. PRODUCT DETAIL PAGE (PDP) LOGIC                                       */
-        /* -------------------------------------------------------------------------- */
-        function openPDP(productId, updateHistory = true) {
-            const product = PRODUCTS.find(p => p.id === productId);
-            if (!product) return;
-
-            state.currentPDPId = productId;
-            state.pdpQty = 1;
-
-            document.getElementById('pdp-image').src = product.image;
-            document.getElementById('pdp-badge').innerText = product.badge;
-            document.getElementById('pdp-category').innerText = product.category;
-            document.getElementById('pdp-title').innerText = product.name;
-            document.getElementById('pdp-price').innerText = `$${product.price.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
-            document.getElementById('pdp-description').innerText = product.description;
-            document.getElementById('pdp-material').innerText = product.material;
-            document.getElementById('pdp-qty-num').innerText = '1';
-
-            // Sync Wishlist Icon
-            const isWish = state.wishlist.includes(productId);
-            const wishIcon = document.getElementById('pdp-wishlist-icon');
-            wishIcon.className = isWish ? 'fa-solid fa-heart text-gold-400' : 'fa-regular fa-heart';
-
-            navTo('product-detail', false);
-            if (updateHistory) {
-                history.pushState({ section: `product-${productId}` }, '', `#product-${productId.replace('prod-', '')}`);
-            }
-        }
-
-        function changePDPQty(delta) {
-            state.pdpQty = Math.max(1, state.pdpQty + delta);
-            document.getElementById('pdp-qty-num').innerText = state.pdpQty;
-        }
-
-        function addCurrentPDPToCart() {
-            addToCart(state.currentPDPId, state.pdpQty);
-        }
-
-        function togglePDPWishlist() {
-            toggleWishlist(state.currentPDPId);
-            const isWish = state.wishlist.includes(state.currentPDPId);
-            document.getElementById('pdp-wishlist-icon').className = isWish ? 'fa-solid fa-heart text-gold-400' : 'fa-regular fa-heart';
-        }
-
-        function buyNowPDP() {
-            addToCart(state.currentPDPId, state.pdpQty);
-            proceedToCheckout();
-        }
-
-        /* -------------------------------------------------------------------------- */
-        /* 5. CART & WISHLIST ENGINE                                                */
-        /* -------------------------------------------------------------------------- */
-        function addToCart(productId, qty = 1) {
-            const product = PRODUCTS.find(p => p.id === productId);
-            if (!product) return;
-
-            const existingIndex = state.cart.findIndex(item => item.id === productId);
-            if (existingIndex > -1) {
-                state.cart[existingIndex].qty += qty;
-            } else {
-                state.cart.push({ id: productId, qty: qty });
-            }
-
-            saveCart();
-            updateCartUI();
-            showToast(`Added "${product.name}" to Acquisition Bag.`, 'success');
-        }
-
-        function updateCartQty(productId, delta) {
-            const item = state.cart.find(i => i.id === productId);
-            if (!item) return;
-
-            item.qty += delta;
-            if (item.qty <= 0) {
-                removeFromCart(productId);
-            } else {
-                saveCart();
-                updateCartUI();
-            }
-        }
-
-        function removeFromCart(productId) {
-            state.cart = state.cart.filter(i => i.id !== productId);
-            saveCart();
-            updateCartUI();
-            showToast('Item removed from Acquisition Bag.', 'info');
-        }
-
-        function saveCart() {
-            localStorage.setItem('aurelis_cart', JSON.stringify(state.cart));
-        }
-
-        function updateCartUI() {
-            const totalCount = state.cart.reduce((sum, item) => sum + item.qty, 0);
-            document.getElementById('cart-badge').innerText = totalCount;
-
-            // Render Drawer Items
-            const drawerContainer = document.getElementById('drawer-cart-items');
-            
-            if (state.cart.length === 0) {
-                drawerContainer.innerHTML = '<p class="text-xs text-gray-400 text-center py-8">Your acquisition bag is currently empty.</p>';
-            } else {
-                drawerContainer.innerHTML = state.cart.map(item => {
-                    const product = PRODUCTS.find(p => p.id === item.id);
-                    if (!product) return '';
-                    return `
-                        <div class="flex items-center space-x-4 border-b border-gold-500/10 pb-4">
-                            <img src="${product.image}" alt="${product.name}" class="w-16 h-16 object-cover border border-gold-500/20">
-                            <div class="flex-grow">
-                                <h5 class="text-xs font-serif text-white line-clamp-1">${product.name}</h5>
-                                <p class="text-xs text-gold-400 font-semibold">$${product.price.toFixed(2)}</p>
-                                <div class="flex items-center space-x-2 mt-2">
-                                    <button onclick="updateCartQty('${product.id}', -1)" class="text-gray-400 hover:text-white px-1.5 border border-gold-500/20 text-[10px]">-</button>
-                                    <span class="text-xs text-white">${item.qty}</span>
-                                    <button onclick="updateCartQty('${product.id}', 1)" class="text-gray-400 hover:text-white px-1.5 border border-gold-500/20 text-[10px]">+</button>
-                                </div>
-                            </div>
-                            <button onclick="removeFromCart('${product.id}')" class="text-gray-400 hover:text-red-400 p-2"><i class="fa-solid fa-trash-can text-xs"></i></button>
-                        </div>
-                    `;
-                }).join('');
-            }
-
-            // Calculations
-            const subtotal = calculateSubtotal();
-            const discount = state.promoApplied ? subtotal * 0.10 : 0;
-            const grandTotal = subtotal - discount;
-
-            document.getElementById('drawer-subtotal-val').innerText = `$${subtotal.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
-            
-            // If on cart page, update cart page values
-            if (document.getElementById('sec-cart').classList.contains('active')) {
-                renderCartPage();
-            }
-        }
-
-        function calculateSubtotal() {
-            return state.cart.reduce((sum, item) => {
-                const p = PRODUCTS.find(prod => prod.id === item.id);
-                return sum + (p ? p.price * item.qty : 0);
-            }, 0);
-        }
-
-        function renderCartPage() {
-            const container = document.getElementById('cart-items-container');
-            if (state.cart.length === 0) {
-                container.innerHTML = `
-                    <div class="glass-panel p-10 text-center">
-                        <i class="fa-solid fa-bag-shopping text-4xl text-gold-400/40 mb-3"></i>
-                        <h3 class="font-serif text-2xl text-white mb-2">YOUR BAG IS EMPTY</h3>
-                        <p class="text-xs text-gray-400 mb-6">Discover our bespoke equipment to populate your acquisition list.</p>
-                        <button onclick="navTo('catalog')" class="btn-gold px-6 py-2.5 text-xs">Explore Catalog</button>
-                    </div>
-                `;
-            } else {
-                container.innerHTML = state.cart.map(item => {
-                    const product = PRODUCTS.find(p => p.id === item.id);
-                    if (!product) return '';
-                    return `
-                        <div class="glass-panel p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-                            <div class="flex items-center space-x-6 w-full sm:w-auto">
-                                <img src="${product.image}" alt="${product.name}" class="w-20 h-20 object-cover border border-gold-500/20">
-                                <div>
-                                    <span class="text-[9px] text-gold-400 uppercase tracking-widest">${product.category}</span>
-                                    <h4 class="font-serif text-lg text-white">${product.name}</h4>
-                                    <p class="text-xs text-gray-400">$${product.price.toFixed(2)} each</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between w-full sm:w-auto space-x-8 border-t sm:border-t-0 border-gold-500/10 pt-4 sm:pt-0">
-                                <div class="flex items-center border border-gold-500/30 bg-dark-900">
-                                    <button onclick="updateCartQty('${product.id}', -1)" class="px-3 py-1 text-gray-400 hover:text-gold-400">-</button>
-                                    <span class="px-3 text-xs font-bold text-white">${item.qty}</span>
-                                    <button onclick="updateCartQty('${product.id}', 1)" class="px-3 py-1 text-gray-400 hover:text-gold-400">+</button>
-                                </div>
-                                <span class="font-serif text-lg text-gold-gradient font-bold">$${(product.price * item.qty).toFixed(2)}</span>
-                                <button onclick="removeFromCart('${product.id}')" class="text-gray-400 hover:text-red-400"><i class="fa-solid fa-xmark text-lg"></i></button>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-            }
-
-            const subtotal = calculateSubtotal();
-            const discount = state.promoApplied ? subtotal * 0.10 : 0;
-            const grandTotal = subtotal - discount;
-
-            document.getElementById('cart-subtotal-val').innerText = `$${subtotal.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
-            document.getElementById('cart-discount-val').innerText = `-$${discount.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
-            document.getElementById('cart-total-val').innerText = `$${grandTotal.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
-        }
-
-        function toggleCartDrawer(open) {
-            const drawerBackdrop = document.getElementById('cart-drawer-backdrop');
-            const drawer = document.getElementById('cart-drawer');
-
-            if (open) {
-                drawerBackdrop.classList.remove('hidden');
-                setTimeout(() => {
-                    drawer.classList.remove('translate-x-full');
-                }, 10);
-            } else {
-                drawer.classList.add('translate-x-full');
-                setTimeout(() => {
-                    drawerBackdrop.classList.add('hidden');
-                }, 300);
-            }
-        }
-
-        function applyPromoCode() {
-            const val = document.getElementById('promo-code-input').value.trim().toUpperCase();
-            if (val === 'AURELIS10') {
-                state.promoApplied = true;
-                showToast('Privilege Code AURELIS10 Applied: 10% Discount!', 'success');
-                updateCartUI();
-            } else {
-                showToast('Invalid Privilege Code.', 'error');
-            }
-        }
-
-        /* Wishlist Toggle */
-        function toggleWishlist(productId) {
-            const index = state.wishlist.indexOf(productId);
-            if (index > -1) {
-                state.wishlist.splice(index, 1);
-                showToast('Removed from Wishlist.', 'info');
-            } else {
-                state.wishlist.push(productId);
-                showToast('Saved to Wishlist.', 'success');
-            }
-
-            localStorage.setItem('aurelis_wishlist', JSON.stringify(state.wishlist));
-            updateWishlistUI();
-            
-            // Re-render current catalog/home cards to update heart icons
-            if (document.getElementById('sec-catalog').classList.contains('active')) applyCatalogFilters();
-            if (document.getElementById('sec-home').classList.contains('active')) renderHomeFeatured();
-        }
-
-        function updateWishlistUI() {
-            const count = state.wishlist.length;
-            const badge = document.getElementById('wishlist-badge');
-            badge.innerText = count;
-            badge.style.opacity = count > 0 ? '1' : '0';
-
-            if (document.getElementById('sec-wishlist').classList.contains('active')) {
-                renderWishlistSection();
-            }
-        }
-
-        function renderWishlistSection() {
-            const grid = document.getElementById('wishlist-products-grid');
-            const empty = document.getElementById('wishlist-empty-state');
-
-            if (state.wishlist.length === 0) {
-                grid.innerHTML = '';
-                empty.classList.remove('hidden');
-            } else {
-                empty.classList.add('hidden');
-                const wishProducts = PRODUCTS.filter(p => state.wishlist.includes(p.id));
-                grid.innerHTML = wishProducts.map(p => createProductCardHTML(p)).join('');
-            }
-        }
-
-        /* -------------------------------------------------------------------------- */
-        /* 6. SEARCH MODAL LOGIC                                                    */
-        /* -------------------------------------------------------------------------- */
-        function toggleSearchModal(open) {
-            const modal = document.getElementById('search-modal');
-            if (open) {
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                document.getElementById('live-search-input').focus();
-            } else {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }
-        }
-
-        function handleLiveSearch() {
-            const query = document.getElementById('live-search-input').value.toLowerCase().trim();
-            const grid = document.getElementById('search-results-grid');
-            const emptyMsg = document.getElementById('search-empty-msg');
-
-            if (!query) {
-                grid.innerHTML = '';
-                emptyMsg.classList.add('hidden');
-                return;
-            }
-
-            const results = PRODUCTS.filter(p => 
-                p.name.toLowerCase().includes(query) ||
-                p.category.toLowerCase().includes(query) ||
-                p.description.toLowerCase().includes(query)
-            );
-
-            if (results.length === 0) {
-                grid.innerHTML = '';
-                emptyMsg.classList.remove('hidden');
-            } else {
-                emptyMsg.classList.add('hidden');
-                grid.innerHTML = results.map(p => `
-                    <div onclick="toggleSearchModal(false); openPDP('${p.id}');" class="glass-card p-4 flex items-center space-x-4 cursor-pointer hover:border-gold-400 transition-colors">
-                        <img src="${p.image}" class="w-16 h-16 object-cover border border-gold-500/20">
-                        <div>
-                            <span class="text-[9px] text-gold-400 uppercase tracking-widest">${p.category}</span>
-                            <h5 class="font-serif text-sm text-white">${p.name}</h5>
-                            <p class="text-xs text-gold-gradient font-bold">$${p.price.toFixed(2)}</p>
-                        </div>
-                    </div>
-                `).join('');
-            }
-        }
-
-        /* -------------------------------------------------------------------------- */
-        /* 7. CHECKOUT & PAYMENT METHOD DEMO ENGINE                                  */
-        /* -------------------------------------------------------------------------- */
-        function proceedToCheckout() {
-            if (state.cart.length === 0) {
-                showToast('Your acquisition bag is empty.', 'error');
-                return;
-            }
-            navTo('checkout');
-        }
-
-        function renderCheckoutPage() {
-            const container = document.getElementById('checkout-summary-items');
-            container.innerHTML = state.cart.map(item => {
-                const p = PRODUCTS.find(prod => prod.id === item.id);
-                if (!p) return '';
-                return `
-                    <div class="flex justify-between items-center text-xs text-gray-300 border-b border-gold-500/10 pb-2">
-                        <span class="line-clamp-1">${p.name} (x${item.qty})</span>
-                        <span class="font-serif text-white font-semibold">$${(p.price * item.qty).toFixed(2)}</span>
-                    </div>
-                `;
-            }).join('');
-
-            const subtotal = calculateSubtotal();
-            const discount = state.promoApplied ? subtotal * 0.10 : 0;
-            const total = subtotal - discount;
-
-            document.getElementById('chk-summary-subtotal').innerText = `$${subtotal.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
-            document.getElementById('chk-summary-total').innerText = `$${total.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
-        }
-
-        function togglePaymentMethod(method) {
-            const cardBox = document.getElementById('card-payment-box');
-            const altBox = document.getElementById('alt-payment-box');
-
-            if (method === 'card') {
-                cardBox.classList.remove('hidden');
-                altBox.classList.add('hidden');
-            } else {
-                cardBox.classList.add('hidden');
-                altBox.classList.remove('hidden');
-            }
-        }
-
-        function updateVisualCard() {
-            const name = document.getElementById('card-name-input').value.trim();
-            const num = document.getElementById('card-num-input').value.trim();
-            const exp = document.getElementById('card-exp-input').value.trim();
-
-            document.getElementById('vis-card-name').innerText = name || 'YOUR NAME';
-            document.getElementById('vis-card-number').innerText = num ? formatCardNum(num) : '**** **** **** ****';
-            document.getElementById('vis-card-exp').innerText = exp || 'MM/YY';
-        }
-
-        function formatCardNum(str) {
-            return str.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim();
-        }
-
-        function handleCheckoutSubmit(e) {
-            e.preventDefault();
-
-            // Validate form
-            const firstName = document.getElementById('chk-first-name').value.trim();
-            const lastName = document.getElementById('chk-last-name').value.trim();
-            const email = document.getElementById('chk-email').value.trim();
-            const address = document.getElementById('chk-address').value.trim();
-
-            if (!firstName || !lastName || !email || !address) {
-                showToast('Please fill out all required shipping fields.', 'error');
-                return;
-            }
-
-            const btn = document.getElementById('place-order-btn');
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Processing Acquisition...';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                // Generate Demo Order
-                const subtotal = calculateSubtotal();
-                const discount = state.promoApplied ? subtotal * 0.10 : 0;
-                const total = subtotal - discount;
-
-                const newOrder = {
-                    id: `AUR-2026-${Math.floor(100000 + Math.random() * 900000)}`,
-                    date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
-                    items: [...state.cart],
-                    total: total,
-                    shippingAddress: `${address}, ${document.getElementById('chk-city').value.trim()}, ${document.getElementById('chk-country').value.trim()}`,
-                    status: 'CONFIRMED'
-                };
-
-                state.orders.unshift(newOrder);
-                localStorage.setItem('aurelis_orders', JSON.stringify(state.orders));
-
-                // Clear Cart
-                state.cart = [];
-                state.promoApplied = false;
-                saveCart();
-                updateCartUI();
-
-                // Show Confirmation
-                document.getElementById('conf-order-id').innerText = newOrder.id;
-                document.getElementById('conf-date').innerText = newOrder.date;
-                document.getElementById('conf-address').innerText = newOrder.shippingAddress;
-                document.getElementById('conf-total').innerText = `$${total.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
-
-                btn.innerHTML = 'Complete Acquisition';
-                btn.disabled = false;
-
-                navTo('confirmation');
-                showToast('Acquisition Order Confirmed!', 'success');
-            }, 1800);
-        }
-
-        /* -------------------------------------------------------------------------- */
-        /* 8. ORDER HISTORY RENDERING                                              */
-        /* -------------------------------------------------------------------------- */
-        function renderOrders() {
-            const container = document.getElementById('orders-list-container');
-            const emptyState = document.getElementById('orders-empty-state');
-
-            if (state.orders.length === 0) {
-                container.innerHTML = '';
-                emptyState.classList.remove('hidden');
-            } else {
-                emptyState.classList.add('hidden');
-                container.innerHTML = state.orders.map(order => `
-                    <div class="glass-panel p-6 space-y-4">
-                        <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-gold-500/20 pb-4 gap-2">
-                            <div>
-                                <span class="text-xs font-mono text-gold-400 font-bold">${order.id}</span>
-                                <p class="text-[10px] text-gray-400">Placed on ${order.date}</p>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <span class="text-[9px] bg-emerald-900/80 text-emerald-300 border border-emerald-500/30 font-bold px-3 py-1 uppercase tracking-widest">
-                                    ${order.status}
-                                </span>
-                                <span class="font-serif text-xl text-white font-semibold">$${order.total.toLocaleString('en-US', {minimumFractionDigits: 2})}</span>
-                            </div>
-                        </div>
-
-                        <div class="space-y-2">
-                            ${order.items.map(item => {
-                                const p = PRODUCTS.find(prod => prod.id === item.id);
-                                if (!p) return '';
-                                return `
-                                    <div class="flex items-center space-x-3 text-xs text-gray-300">
-                                        <img src="${p.image}" class="w-10 h-10 object-cover border border-gold-500/20">
-                                        <span class="flex-grow">${p.name} (x${item.qty})</span>
-                                        <span class="font-mono text-gray-400">$${(p.price * item.qty).toFixed(2)}</span>
-                                    </div>
-                                `;
-                            }).join('')}
-                        </div>
-                    </div>
-                `).join('');
-            }
-        }
-
-        /* -------------------------------------------------------------------------- */
-        /* 9. FOOTER NEWSLETTER & TOAST ENGINE                                       */
-        /* -------------------------------------------------------------------------- */
-        function handleNewsletter(e) {
-            e.preventDefault();
-            showToast('THANK YOU — WELCOME TO THE PRIVATE CLUB.', 'success');
-            e.target.reset();
-        }
-
-        function showToast(message, type = 'info') {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            
-            let bgClass = 'bg-dark-900 border-gold-500/40 text-gold-400';
-            if (type === 'error') bgClass = 'bg-dark-900 border-red-500/40 text-red-400';
-            if (type === 'success') bgClass = 'bg-dark-900 border-emerald-500/40 text-emerald-300';
-
-            toast.className = `toast-msg glass-panel px-5 py-3 border text-xs font-medium tracking-wide flex items-center space-x-3 shadow-2xl ${bgClass}`;
-            toast.innerHTML = `
-                <i class="fa-solid ${type === 'error' ? 'fa-triangle-exclamation' : 'fa-circle-check'} text-sm"></i>
-                <span>${message}</span>
-            `;
-
-            container.appendChild(toast);
-
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateX(100%)';
-                toast.style.transition = 'all 0.4s ease';
-                setTimeout(() => toast.remove(), 400);
-            }, 3500);
-        }
-    </script>
+      };
+    });
+    c.appendChild(div);
+  });
+}
+makeQuiz('quiz-g',[
+  {phrase:'СИНЯЯ РУЧКА', answer:'g', explain:'Ручка — какая? Синяя. При изменении: синяя ручка → синей ручки. Оба слова меняются вместе — это согласование.'},
+  {phrase:'ЗЕЛЁНЫЕ ДЕРЕВЬЯ', answer:'g', explain:'Деревья — какие? Зелёные. Зелёные деревья → зелёных деревьев — оба слова меняются одинаково.'},
+  {phrase:'ТЁПЛЫЙ ВЕЧЕР', answer:'g', explain:'Вечер — какой? Тёплый. Тёплый вечер → тёплого вечера — прилагательное следует за существительным.'}
+]);
+makeQuiz('quiz-b',[
+  {phrase:'ПОМОЧЬ ДРУГУ', answer:'u', explain:'Помочь — кому? — другу. Главное слово требует от зависимого дательного падежа.'},
+  {phrase:'ЛЮБИТЬ МУЗЫКУ', answer:'u', explain:'Любить — что? — музыку. Главное слово требует винительного падежа.'},
+  {phrase:'ГОРДИТЬСЯ ПОБЕДОЙ', answer:'u', explain:'Гордиться — чем? — победой. Требуется творительный падеж.'}
+]);
+makeQuiz('quiz-p',[
+  {phrase:'БЫСТРО БЕЖАТЬ', answer:'p', explain:'Бежать — как? — быстро. «Быстро» — наречие, оно не изменяется, значит это примыкание.'},
+  {phrase:'ЖЕЛАНИЕ УЧИТЬСЯ', answer:'p', explain:'Желание (какое, по смыслу) — учиться. «Учиться» — неизменяемый инфинитив.'},
+  {phrase:'ОЧЕНЬ КРАСИВЫЙ', answer:'p', explain:'Красивый — насколько? — очень. «Очень» не изменяется никогда.'}
+]);
+
+const game1Data = [
+  {phrase:'КРАСИВЫЙ ДОМ', answer:'g', explain:'дом — какой? красивый; красивый дом → красивого дома — оба слова меняются.'},
+  {phrase:'ЧИТАТЬ КНИГУ', answer:'u', explain:'читать — что? книгу; главное слово требует винительного падежа.'},
+  {phrase:'ГОВОРИТЬ ГРОМКО', answer:'p', explain:'говорить — как? громко; громко — неизменяемое наречие.'},
+  {phrase:'ЗЕЛЁНАЯ ТРАВА', answer:'g', explain:'трава — какая? зелёная; зелёная трава → зелёной травы — меняются вместе.'},
+  {phrase:'ПОМОЧЬ ДРУГУ', answer:'u', explain:'помочь — кому? другу; требуется дательный падеж.'},
+  {phrase:'ОЧЕНЬ КРАСИВЫЙ', answer:'p', explain:'красивый — насколько? очень; «очень» не изменяется.'},
+  {phrase:'ГОРДИТЬСЯ БРАТОМ', answer:'u', explain:'гордиться — кем? братом; требуется творительный падеж.'},
+  {phrase:'ИНТЕРЕСНАЯ ИСТОРИЯ', answer:'g', explain:'история — какая? интересная; оба слова изменяются одинаково.'},
+  {phrase:'БЫСТРО БЕЖАТЬ', answer:'p', explain:'бежать — как? быстро; наречие не изменяется.'},
+  {phrase:'ЖЕЛАНИЕ УЧИТЬСЯ', answer:'p', explain:'желание (какое, по смыслу) учиться; неизменяемый инфинитив.'}
+];
+let g1i=0;
+function renderGame1(){
+  if(g1i>=game1Data.length){
+    document.getElementById('g1-phrase').textContent='Игра пройдена!';
+    document.querySelector('#g1-phrase').parentElement.querySelector('.doors').style.display='none';
+    document.getElementById('g1-progress').textContent='Готово: '+game1Data.length+'/'+game1Data.length;
+    return;
+  }
+  document.getElementById('g1-progress').textContent='Вопрос '+(g1i+1)+' из '+game1Data.length;
+  document.getElementById('g1-phrase').textContent=game1Data[g1i].phrase;
+  document.getElementById('g1-feedback').className='feedback';
+}
+function answerGame1(v){
+  const q=game1Data[g1i];
+  const fb=document.getElementById('g1-feedback');
+  if(v===q.answer){ fb.className='feedback show ok'; fb.textContent='Правильно! '+q.explain; }
+  else{ fb.className='feedback show bad'; fb.textContent='Не совсем! '+q.explain; }
+  g1i++;
+  setTimeout(renderGame1, 1600);
+}
+renderGame1();
+
+const game2Data = [
+  {statement:'«Читать книгу» — это согласование.', correctIsError:true, explain:'Это управление. Читать — что? — книгу. Главное слово требует винительного падежа.'},
+  {statement:'«Красивый дом» — это согласование.', correctIsError:false, explain:'Верно! Дом — какой? Красивый. Оба слова изменяются вместе.'},
+  {statement:'«Говорить громко» — это примыкание.', correctIsError:false, explain:'Верно! Громко — неизменяемое наречие, присоединяется только по смыслу.'},
+  {statement:'«Помочь другу» — это примыкание.', correctIsError:true, explain:'Это управление. Помочь — кому? — другу. Требуется дательный падеж.'},
+  {statement:'«Любовь к путешествиям» — это примыкание.', correctIsError:true, explain:'Это управление. Любовь — к чему? — к путешествиям. Требуется дательный падеж.'}
+];
+let g2i=0;
+function renderGame2(){
+  if(g2i>=game2Data.length){
+    document.getElementById('g2-statement').textContent='Игра пройдена!';
+    document.querySelector('#g2-statement').parentElement.querySelector('.doors').style.display='none';
+    document.getElementById('g2-progress').textContent='Готово: '+game2Data.length+'/'+game2Data.length;
+    return;
+  }
+  document.getElementById('g2-progress').textContent='Утверждение '+(g2i+1)+' из '+game2Data.length;
+  document.getElementById('g2-statement').textContent=game2Data[g2i].statement;
+  document.getElementById('g2-feedback').className='feedback';
+}
+function answerGame2(saidError){
+  const q=game2Data[g2i];
+  const fb=document.getElementById('g2-feedback');
+  if(saidError===q.correctIsError){ fb.className='feedback show ok'; fb.textContent='Правильно! '+q.explain; }
+  else{ fb.className='feedback show bad'; fb.textContent=q.explain; }
+  g2i++;
+  setTimeout(renderGame2, 1700);
+}
+renderGame2();
+
+const examData = [
+  {phrase:'СИНЕЕ НЕБО', answer:'g', explain:'небо — какое? синее; оба слова изменяются вместе.'},
+  {phrase:'ЖДАТЬ АВТОБУСА', answer:'u', explain:'ждать — чего? автобуса; главное слово требует родительного падежа.'},
+  {phrase:'ИДТИ БЫСТРО', answer:'p', explain:'идти — как? быстро; наречие не изменяется.'},
+  {phrase:'ДУМАТЬ О БУДУЩЕМ', answer:'u', explain:'думать — о чём? о будущем; требуется предложный падеж.'},
+  {phrase:'ВЕСЁЛЫЕ ДЕТИ', answer:'g', explain:'дети — какие? весёлые; оба слова меняются вместе.'},
+  {phrase:'НАЧАЛ РАБОТАТЬ', answer:'p', explain:'начал — что делать? работать; инфинитив не изменяется.'},
+  {phrase:'ЛЮБИТЬ МУЗЫКУ', answer:'u', explain:'любить — что? музыку; требуется винительный падеж.'},
+  {phrase:'ЯРКОЕ СОЛНЦЕ', answer:'g', explain:'солнце — какое? яркое; оба слова изменяются вместе.'},
+  {phrase:'ОЧЕНЬ БЫСТРО', answer:'p', explain:'быстро — насколько? очень; «очень» не изменяется.'},
+  {phrase:'ГОРДИТЬСЯ ПОБЕДОЙ', answer:'u', explain:'гордиться — чем? победой; требуется творительный падеж.'}
+];
+let examIdx=0, examScore=0, examMistakes=[];
+function renderExam(){
+  const body=document.getElementById('exam-body');
+  if(examIdx>=examData.length){
+    let verdict;
+    if(examScore===10) verdict='МАСТЕР РУССКОГО ЯЗЫКА!';
+    else if(examScore>=8) verdict='Отлично! Ты почти мастер!';
+    else if(examScore>=5) verdict='Хорошая работа! Повтори несколько примеров.';
+    else verdict='Давай ещё раз посмотрим правила — и попробуем снова!';
+    let mistakesHtml = examMistakes.map(m=>`<div class="mistake"><b>${m.phrase}</b>: ${m.explain}</div>`).join('');
+    body.innerHTML = `<div class="result-box">
+      <div class="score">Твой результат: ${examScore}/10</div>
+      <div style="font-size:1.25rem; font-weight:800; margin-top:6px;">${verdict}</div>
+      ${examMistakes.length ? '<div style="text-align:left; margin-top:16px;"><b>Разбор ошибок:</b>'+mistakesHtml+'</div>' : ''}
+      <button class="btn ghost" style="margin-top:20px;" onclick="restartExam()">Пройти ещё раз</button>
+    </div>`;
+    if(examScore===10) launchConfetti();
+    return;
+  }
+  const q = examData[examIdx];
+  body.innerHTML = `<div class="progress">Вопрос ${examIdx+1} из 10</div>
+    <div class="game-phrase">${q.phrase}</div>
+    <div class="doors" style="justify-content:center;">
+      <div class="door g" onclick="answerExam('g')">Согласование</div>
+      <div class="door b" onclick="answerExam('u')">Управление</div>
+      <div class="door p" onclick="answerExam('p')">Примыкание</div>
+    </div>
+    <div class="feedback" id="exam-fb"></div>`;
+}
+function answerExam(v){
+  const q=examData[examIdx];
+  const fb=document.getElementById('exam-fb');
+  if(v===q.answer){ examScore++; fb.className='feedback show ok'; fb.textContent='Правильно! '+q.explain; }
+  else{ examMistakes.push(q); fb.className='feedback show bad'; fb.textContent=q.explain; }
+  examIdx++;
+  setTimeout(renderExam, 1400);
+}
+function restartExam(){ examIdx=0; examScore=0; examMistakes=[]; renderExam(); }
+renderExam();
+
+function launchConfetti(){
+  const holder=document.createElement('div'); holder.className='confetti';
+  document.body.appendChild(holder);
+  const colors=['#2F9E58','#2F80C4','#8A4FC7','#F5C84C'];
+  for(let i=0;i<70;i++){
+    const s=document.createElement('span');
+    s.style.left=Math.random()*100+'vw';
+    s.style.background=colors[Math.floor(Math.random()*colors.length)];
+    s.style.animationDelay=(Math.random()*0.6)+'s';
+    holder.appendChild(s);
+  }
+  setTimeout(()=>holder.remove(), 3200);
+}
+</script>
 </body>
 </html>
-```eof
-
-All requested features, SPA routing, catalog filters, shopping cart, live credit card generator, wishlist persistence, order history, and mobile bottom navigation are operational, preserving the dark emerald and gold luxury visual identity.
